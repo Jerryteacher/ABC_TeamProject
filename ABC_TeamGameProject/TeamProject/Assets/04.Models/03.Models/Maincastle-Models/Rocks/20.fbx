@@ -1,0 +1,415 @@
+; FBX 6.1.0 project file
+; Created by Blender FBX Exporter
+; for support mail: ideasman42@gmail.com
+; ----------------------------------------------------
+
+FBXHeaderExtension:  {
+	FBXHeaderVersion: 1003
+	FBXVersion: 6100
+	CreationTimeStamp:  {
+		Version: 1000
+		Year: 2020
+		Month: 02
+		Day: 28
+		Hour: 19
+		Minute: 26
+		Second: 42
+		Millisecond: 0
+	}
+	Creator: "FBX SDK/FBX Plugins build 20070228"
+	OtherFlags:  {
+		FlagPLE: 0
+	}
+}
+CreationTime: "2020-02-28 19:26:42:000"
+Creator: "Blender version 2.79 (sub 0)"
+
+; Object definitions
+;------------------------------------------------------------------
+
+Definitions:  {
+	Version: 100
+	Count: 5
+	ObjectType: "Model" {
+		Count: 1
+	}
+	ObjectType: "Geometry" {
+		Count: 1
+	}
+	ObjectType: "Material" {
+		Count: 1
+	}
+	ObjectType: "Texture" {
+		Count: 1
+	}
+	ObjectType: "Video" {
+		Count: 1
+	}
+	ObjectType: "Pose" {
+		Count: 1
+	}
+	ObjectType: "GlobalSettings" {
+		Count: 1
+	}
+}
+
+; Object properties
+;------------------------------------------------------------------
+
+Objects:  {
+	Model: "Model::20", "Mesh" {
+		Version: 232
+		Properties60:  {
+			Property: "QuaternionInterpolate", "bool", "",0
+			Property: "Visibility", "Visibility", "A+",1
+			Property: "Lcl Translation", "Lcl Translation", "A+",0.000000000000000,0.000000000000000,0.000000000000000
+			Property: "Lcl Rotation", "Lcl Rotation", "A+",0.000002504478065,0.000018669335285,-0.000000000000000
+			Property: "Lcl Scaling", "Lcl Scaling", "A+",1.000000000000000,1.000000000000000,1.000000000000000
+			Property: "RotationOffset", "Vector3D", "",0,0,0
+			Property: "RotationPivot", "Vector3D", "",0,0,0
+			Property: "ScalingOffset", "Vector3D", "",0,0,0
+			Property: "ScalingPivot", "Vector3D", "",0,0,0
+			Property: "TranslationActive", "bool", "",0
+			Property: "TranslationMin", "Vector3D", "",0,0,0
+			Property: "TranslationMax", "Vector3D", "",0,0,0
+			Property: "TranslationMinX", "bool", "",0
+			Property: "TranslationMinY", "bool", "",0
+			Property: "TranslationMinZ", "bool", "",0
+			Property: "TranslationMaxX", "bool", "",0
+			Property: "TranslationMaxY", "bool", "",0
+			Property: "TranslationMaxZ", "bool", "",0
+			Property: "RotationOrder", "enum", "",0
+			Property: "RotationSpaceForLimitOnly", "bool", "",0
+			Property: "AxisLen", "double", "",10
+			Property: "PreRotation", "Vector3D", "",0,0,0
+			Property: "PostRotation", "Vector3D", "",0,0,0
+			Property: "RotationActive", "bool", "",0
+			Property: "RotationMin", "Vector3D", "",0,0,0
+			Property: "RotationMax", "Vector3D", "",0,0,0
+			Property: "RotationMinX", "bool", "",0
+			Property: "RotationMinY", "bool", "",0
+			Property: "RotationMinZ", "bool", "",0
+			Property: "RotationMaxX", "bool", "",0
+			Property: "RotationMaxY", "bool", "",0
+			Property: "RotationMaxZ", "bool", "",0
+			Property: "RotationStiffnessX", "double", "",0
+			Property: "RotationStiffnessY", "double", "",0
+			Property: "RotationStiffnessZ", "double", "",0
+			Property: "MinDampRangeX", "double", "",0
+			Property: "MinDampRangeY", "double", "",0
+			Property: "MinDampRangeZ", "double", "",0
+			Property: "MaxDampRangeX", "double", "",0
+			Property: "MaxDampRangeY", "double", "",0
+			Property: "MaxDampRangeZ", "double", "",0
+			Property: "MinDampStrengthX", "double", "",0
+			Property: "MinDampStrengthY", "double", "",0
+			Property: "MinDampStrengthZ", "double", "",0
+			Property: "MaxDampStrengthX", "double", "",0
+			Property: "MaxDampStrengthY", "double", "",0
+			Property: "MaxDampStrengthZ", "double", "",0
+			Property: "PreferedAngleX", "double", "",0
+			Property: "PreferedAngleY", "double", "",0
+			Property: "PreferedAngleZ", "double", "",0
+			Property: "InheritType", "enum", "",0
+			Property: "ScalingActive", "bool", "",0
+			Property: "ScalingMin", "Vector3D", "",1,1,1
+			Property: "ScalingMax", "Vector3D", "",1,1,1
+			Property: "ScalingMinX", "bool", "",0
+			Property: "ScalingMinY", "bool", "",0
+			Property: "ScalingMinZ", "bool", "",0
+			Property: "ScalingMaxX", "bool", "",0
+			Property: "ScalingMaxY", "bool", "",0
+			Property: "ScalingMaxZ", "bool", "",0
+			Property: "GeometricTranslation", "Vector3D", "",0,0,0
+			Property: "GeometricRotation", "Vector3D", "",0,0,0
+			Property: "GeometricScaling", "Vector3D", "",1,1,1
+			Property: "LookAtProperty", "object", ""
+			Property: "UpVectorProperty", "object", ""
+			Property: "Show", "bool", "",1
+			Property: "NegativePercentShapeSupport", "bool", "",1
+			Property: "DefaultAttributeIndex", "int", "",0
+			Property: "Color", "Color", "A",0.8,0.8,0.8
+			Property: "Size", "double", "",100
+			Property: "Look", "enum", "",1
+		}
+		MultiLayer: 0
+		MultiTake: 1
+		Shading: Y
+		Culling: "CullingOff"
+		Vertices: -0.128875,-0.020012,0.049701,-0.117180,-0.086205,0.026985,0.014291,-0.086466,0.042065,-0.120581,0.024674,-0.039745,
+		          -0.128228,0.045725,0.021099,-0.088376,0.068047,-0.030876,-0.103419,-0.061916,-0.046612,-0.069912,0.054222,-0.046916,
+		          0.101341,-0.054768,-0.046193,-0.083469,0.072716,0.013811,0.099386,0.070860,-0.035578,-0.070280,0.037473,0.050884,
+		          0.087448,-0.052052,0.048142,0.091892,0.024727,0.050711,0.092375,0.029095,-0.046736,0.125091,-0.086062,-0.014493,
+		          0.132187,-0.018600,0.025811,0.048909,0.056522,0.046569,0.086124,0.072817,-0.000971,0.128050,0.025424,-0.033314,
+		          0.134161,0.031963,0.010538,-0.127943,-0.061733,-0.014156,-0.102989,-0.086449,-0.030725
+		PolygonVertexIndex: 0,1,-3,3,4,-6,6,7,-9,5,9,-11,11,12,-14,8,7,-15,2,1,-16,15,16,-13,17,18,-10,15,19,-21,1,0,
+		                    -22,15,1,-23,17,9,-12,21,0,-5,18,17,-21,13,12,-17,8,19,-16,22,8,-16,14,7,-11,20,19,-11,11,0,-13,4,
+		                    0,-12,0,2,-13,12,2,-16,4,11,-10,5,4,-10,4,3,-22,7,6,-4,6,8,-23,21,3,-7,1,21,-23,6,22,-22,
+		                    17,11,-14,13,20,-18,15,20,-17,13,16,-21,18,10,-10,20,10,-19,19,14,-11,19,8,-15,7,5,-11,7,3,-6
+		GeometryVersion: 124
+		LayerElementNormal: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "Direct"
+			Normals: -0.695303,-0.052187,0.716788,-0.530839,-0.729453,0.431379,0.026673,-0.758690,0.650868,-0.711509,0.226630,-0.665090,
+			         -0.794427,0.523331,0.308176,-0.363018,0.817438,-0.447188,-0.386364,-0.276193,-0.880001,-0.109348,0.396191,-0.911618,
+			         0.315470,-0.311716,-0.896237,-0.363018,0.817438,-0.447188,-0.243721,0.920286,0.306009,0.405133,0.753746,-0.517411,
+			         -0.134953,0.374340,0.917386,0.321543,-0.375774,0.869106,0.356792,0.286538,0.889126,0.315470,-0.311716,-0.896237,
+			         -0.109348,0.396191,-0.911618,0.175451,0.113681,-0.977874,0.026673,-0.758690,0.650868,-0.530839,-0.729453,0.431379,
+			         0.661885,-0.734519,-0.149388,0.661885,-0.734519,-0.149388,0.863491,-0.108066,0.492599,0.321543,-0.375774,0.869106,
+			         0.119785,0.632893,0.764885,0.296945,0.918760,0.260140,-0.243721,0.920286,0.306009,0.661885,-0.734519,-0.149388,
+			         0.795831,0.178167,-0.578661,0.872982,0.395672,0.285134,-0.530839,-0.729453,0.431379,-0.695303,-0.052187,0.716788,
+			         -0.922605,-0.286508,-0.258187,0.661885,-0.734519,-0.149388,-0.530839,-0.729453,0.431379,-0.347667,-0.807337,-0.476760,
+			         0.119785,0.632893,0.764885,-0.243721,0.920286,0.306009,-0.134953,0.374340,0.917386,-0.922605,-0.286508,-0.258187,
+			         -0.695303,-0.052187,0.716788,-0.794427,0.523331,0.308176,0.296945,0.918760,0.260140,0.119785,0.632893,0.764885,
+			         0.872982,0.395672,0.285134,0.356792,0.286538,0.889126,0.321543,-0.375774,0.869106,0.863491,-0.108066,0.492599,
+			         0.315470,-0.311716,-0.896237,0.795831,0.178167,-0.578661,0.661885,-0.734519,-0.149388,-0.347667,-0.807337,-0.476760,
+			         0.315470,-0.311716,-0.896237,0.661885,-0.734519,-0.149388,0.175451,0.113681,-0.977874,-0.109348,0.396191,-0.911618,
+			         0.405133,0.753746,-0.517411,0.872982,0.395672,0.285134,0.795831,0.178167,-0.578661,0.405133,0.753746,-0.517411,
+			         -0.134953,0.374340,0.917386,-0.695303,-0.052187,0.716788,0.321543,-0.375774,0.869106,-0.794427,0.523331,0.308176,
+			         -0.695303,-0.052187,0.716788,-0.134953,0.374340,0.917386,-0.695303,-0.052187,0.716788,0.026673,-0.758690,0.650868,
+			         0.321543,-0.375774,0.869106,0.321543,-0.375774,0.869106,0.026673,-0.758690,0.650868,0.661885,-0.734519,-0.149388,
+			         -0.794427,0.523331,0.308176,-0.134953,0.374340,0.917386,-0.243721,0.920286,0.306009,-0.363018,0.817438,-0.447188,
+			         -0.794427,0.523331,0.308176,-0.243721,0.920286,0.306009,-0.794427,0.523331,0.308176,-0.711509,0.226630,-0.665090,
+			         -0.922605,-0.286508,-0.258187,-0.109348,0.396191,-0.911618,-0.386364,-0.276193,-0.880001,-0.711509,0.226630,-0.665090,
+			         -0.386364,-0.276193,-0.880001,0.315470,-0.311716,-0.896237,-0.347667,-0.807337,-0.476760,-0.922605,-0.286508,-0.258187,
+			         -0.711509,0.226630,-0.665090,-0.386364,-0.276193,-0.880001,-0.530839,-0.729453,0.431379,-0.922605,-0.286508,-0.258187,
+			         -0.347667,-0.807337,-0.476760,-0.386364,-0.276193,-0.880001,-0.347667,-0.807337,-0.476760,-0.922605,-0.286508,-0.258187,
+			         0.119785,0.632893,0.764885,-0.134953,0.374340,0.917386,0.356792,0.286538,0.889126,0.356792,0.286538,0.889126,
+			         0.872982,0.395672,0.285134,0.119785,0.632893,0.764885,0.661885,-0.734519,-0.149388,0.872982,0.395672,0.285134,
+			         0.863491,-0.108066,0.492599,0.356792,0.286538,0.889126,0.863491,-0.108066,0.492599,0.872982,0.395672,0.285134,
+			         0.296945,0.918760,0.260140,0.405133,0.753746,-0.517411,-0.243721,0.920286,0.306009,0.872982,0.395672,0.285134,
+			         0.405133,0.753746,-0.517411,0.296945,0.918760,0.260140,0.795831,0.178167,-0.578661,0.175451,0.113681,-0.977874,
+			         0.405133,0.753746,-0.517411,0.795831,0.178167,-0.578661,0.315470,-0.311716,-0.896237,0.175451,0.113681,-0.977874,
+			         -0.109348,0.396191,-0.911618,-0.363018,0.817438,-0.447188,0.405133,0.753746,-0.517411,-0.109348,0.396191,-0.911618,
+			         -0.711509,0.226630,-0.665090,-0.363018,0.817438,-0.447188
+		}
+		LayerElementUV: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "ByPolygonVertex"
+			ReferenceInformationType: "IndexToDirect"
+			UV: 0.014676,0.762443,0.135197,0.796233,0.151954,0.765709,0.161686,0.776982,0.025136,0.756089,0.153774,0.740299,
+			    0.174222,0.791081,0.133747,0.811270,0.039711,0.715532,0.158177,0.787476,0.106470,0.807625,0.136718,0.768249,
+			    0.122714,0.789101,0.120868,0.820964,0.117385,0.778544,0.122594,0.801858,0.096502,0.781054,0.052472,0.800189,
+			    0.040446,0.735768,0.050882,0.811371,0.163905,0.763874,0.034900,0.820964,0.017283,0.747879,0.000654,0.743463,
+			    0.108616,0.783510,0.103643,0.772328,0.178495,0.771565,0.073637,0.809816,0.005208,0.768935
+			UVIndex: 12,14,11,10,15,13,16,17,18,19,21,0,1,2,3,18,17,4,11,14,5,5,20,2,9,6,7,8,22,23,14,12,24,5,14,25,9,7,1,24,12,15,6,9,26,3,2,20,18,22,8,25,18,8,4,17,0,23,22,0,1,12,2,15,
+			         12,1,12,11,2,2,11,5,15,1,7,13,15,7,15,10,24,17,16,27,16,18,25,24,10,16,14,24,25,16,25,24,9,1,3,3,26,9,5,26,20,3,20,26,28,0,21,23,0,28,22,4,0,22,18,4,17,19,0,17,27,19
+		}
+		LayerElementTexture: 0 {
+			Version: 101
+			Name: "UVMap"
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			BlendMode: "Translucent"
+			TextureAlpha: 1
+			TextureId: 0
+		}
+		LayerElementMaterial: 0 {
+			Version: 101
+			Name: ""
+			MappingInformationType: "AllSame"
+			ReferenceInformationType: "IndexToDirect"
+			Materials: 0
+		}
+		Layer: 0 {
+			Version: 100
+			LayerElement:  {
+				Type: "LayerElementNormal"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementUV"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementTexture"
+				TypedIndex: 0
+			}
+			LayerElement:  {
+				Type: "LayerElementMaterial"
+				TypedIndex: 0
+			}
+		}
+	}
+	Material: "Material::Rocks__Rocas_bmp", "" {
+		Version: 102
+		ShadingModel: "lambert"
+		MultiLayer: 0
+		Properties60:  {
+			Property: "ShadingModel", "KString", "", "Lambert"
+			Property: "MultiLayer", "bool", "",0
+			Property: "EmissiveColor", "ColorRGB", "",0.8000,0.8000,0.8000
+			Property: "EmissiveFactor", "double", "",0.0000
+			Property: "AmbientColor", "ColorRGB", "",1.0000,1.0000,1.0000
+			Property: "AmbientFactor", "double", "",1.0000
+			Property: "DiffuseColor", "ColorRGB", "",0.8000,0.8000,0.8000
+			Property: "DiffuseFactor", "double", "",0.8000
+			Property: "Bump", "Vector3D", "",0,0,0
+			Property: "TransparentColor", "ColorRGB", "",1,1,1
+			Property: "TransparencyFactor", "double", "",0.0000
+			Property: "SpecularColor", "ColorRGB", "",1.0000,1.0000,1.0000
+			Property: "SpecularFactor", "double", "",0.5000
+			Property: "ShininessExponent", "double", "",12.3
+			Property: "ReflectionColor", "ColorRGB", "",0,0,0
+			Property: "ReflectionFactor", "double", "",1
+			Property: "Emissive", "ColorRGB", "",0,0,0
+			Property: "Ambient", "ColorRGB", "",1.0,1.0,1.0
+			Property: "Diffuse", "ColorRGB", "",0.8,0.8,0.8
+			Property: "Specular", "ColorRGB", "",1.0,1.0,1.0
+			Property: "Shininess", "double", "",12.3
+			Property: "Opacity", "double", "",1.0
+			Property: "Reflectivity", "double", "",0
+		}
+	}
+	Video: "Video::Rocas_bmp", "Clip" {
+		Type: "Clip"
+		Properties60:  {
+			Property: "FrameRate", "double", "",0
+			Property: "LastFrame", "int", "",0
+			Property: "Width", "int", "",0
+			Property: "Height", "int", "",0
+			Property: "Path", "charptr", "", "Rocas.bmp"
+			Property: "StartFrame", "int", "",0
+			Property: "StopFrame", "int", "",0
+			Property: "PlaySpeed", "double", "",1
+			Property: "Offset", "KTime", "",0
+			Property: "InterlaceMode", "enum", "",0
+			Property: "FreeRunning", "bool", "",0
+			Property: "Loop", "bool", "",0
+			Property: "AccessMode", "enum", "",0
+		}
+		UseMipMap: 0
+		Filename: "Rocas.bmp"
+		RelativeFilename: "D:\Rocas.bmp"
+	}
+	Texture: "Texture::Rocas_bmp", "TextureVideoClip" {
+		Type: "TextureVideoClip"
+		Version: 202
+		TextureName: "Texture::Rocas_bmp"
+		Properties60:  {
+			Property: "Translation", "Vector", "A+",0,0,0
+			Property: "Rotation", "Vector", "A+",0,0,0
+			Property: "Scaling", "Vector", "A+",1,1,1
+			Property: "Texture alpha", "Number", "A+",0
+			Property: "TextureTypeUse", "enum", "",0
+			Property: "CurrentTextureBlendMode", "enum", "",1
+			Property: "UseMaterial", "bool", "",0
+			Property: "UseMipMap", "bool", "",0
+			Property: "CurrentMappingType", "enum", "",0
+			Property: "UVSwap", "bool", "",0
+			Property: "WrapModeU", "enum", "",0
+			Property: "WrapModeV", "enum", "",0
+			Property: "TextureRotationPivot", "Vector3D", "",0,0,0
+			Property: "TextureScalingPivot", "Vector3D", "",0,0,0
+			Property: "VideoProperty", "object", ""
+		}
+		Media: "Video::Rocas_bmp"
+		FileName: "Rocas.bmp"
+		RelativeFilename: "D:\Rocas.bmp"
+		ModelUVTranslation: 0,0
+		ModelUVScaling: 1,1
+		Texture_Alpha_Source: "None"
+		Cropping: 0,0,0,0
+	}
+	Pose: "Pose::BIND_POSES", "BindPose" {
+		Type: "BindPose"
+		Version: 100
+		Properties60:  {
+		}
+		NbPoseNodes: 1
+		PoseNode:  {
+			Node: "Model::20"
+			Matrix: 0.000000075497915,1.000000000000000,0.000000043711363,0.000000000000000,-1.000000000000000,0.000000075497901,0.000000325841370,0.000000000000000,0.000000325841370,-0.000000043711388,1.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,0.000000000000000,1.000000000000000
+		}
+	}
+	GlobalSettings:  {
+		Version: 1000
+		Properties60:  {
+			Property: "UpAxis", "int", "",1
+			Property: "UpAxisSign", "int", "",1
+			Property: "FrontAxis", "int", "",2
+			Property: "FrontAxisSign", "int", "",1
+			Property: "CoordAxis", "int", "",0
+			Property: "CoordAxisSign", "int", "",1
+			Property: "UnitScaleFactor", "double", "",1
+		}
+	}
+}
+
+; Object relations
+;------------------------------------------------------------------
+
+Relations:  {
+	Model: "Model::20", "Mesh" {
+	}
+	Model: "Model::Producer Perspective", "Camera" {
+	}
+	Model: "Model::Producer Top", "Camera" {
+	}
+	Model: "Model::Producer Bottom", "Camera" {
+	}
+	Model: "Model::Producer Front", "Camera" {
+	}
+	Model: "Model::Producer Back", "Camera" {
+	}
+	Model: "Model::Producer Right", "Camera" {
+	}
+	Model: "Model::Producer Left", "Camera" {
+	}
+	Model: "Model::Camera Switcher", "CameraSwitcher" {
+	}
+	Material: "Material::Rocks__Rocas_bmp", "" {
+	}
+	Texture: "Texture::Rocas_bmp", "TextureVideoClip" {
+	}
+	Video: "Video::Rocas_bmp", "Clip" {
+	}
+}
+
+; Object connections
+;------------------------------------------------------------------
+
+Connections:  {
+	Connect: "OO", "Model::20", "Model::Scene"
+	Connect: "OO", "Material::Rocks__Rocas_bmp", "Model::20"
+	Connect: "OO", "Texture::Rocas_bmp", "Model::20"
+	Connect: "OO", "Video::Rocas_bmp", "Texture::Rocas_bmp"
+}
+;Takes and animation section
+;----------------------------------------------------
+
+Takes:  {
+	Current: ""
+}
+;Version 5 settings
+;------------------------------------------------------------------
+
+Version5:  {
+	AmbientRenderSettings:  {
+		Version: 101
+		AmbientLightColor: 0.0,0.0,0.0,0
+	}
+	FogOptions:  {
+		FogEnable: 0
+		FogMode: 0
+		FogDensity: 0.000
+		FogStart: 5.000
+		FogEnd: 25.000
+		FogColor: 0.1,0.1,0.1,1
+	}
+	Settings:  {
+		FrameRate: "24"
+		TimeFormat: 1
+		SnapOnFrames: 0
+		ReferenceTimeIndex: -1
+		TimeLineStartTime: 0
+		TimeLineStopTime: 479181389250
+	}
+	RendererSetting:  {
+		DefaultCamera: "Producer Perspective"
+		DefaultViewingMode: 0
+	}
+}
