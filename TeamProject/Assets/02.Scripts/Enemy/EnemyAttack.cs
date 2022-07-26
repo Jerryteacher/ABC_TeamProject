@@ -19,7 +19,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        playerTr = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTr = GameObject.FindGameObjectWithTag("PLAYER").transform;
         tr = GetComponent<Transform>();
     }
     void Update()

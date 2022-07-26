@@ -15,21 +15,17 @@ public class EnemyFOV : MonoBehaviour
     private int PlayerLayer;
     private int obstacleLayer;
     private int layerMask;
-    void Start()
+    void Awake()
     {
         enemyTr = GetComponent<Transform>();
-        playerTr = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
+        playerTr = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();
         PlayerLayer = LayerMask.NameToLayer("PLAYER");
         obstacleLayer = LayerMask.NameToLayer("OBSTACLE");
         layerMask = 1 << PlayerLayer | 1 << obstacleLayer;
 
     }
-    //주어진 각도에 의해 원주 위의 점의 좌표값을 계산하는 함수
     public Vector3 CirclePoint(float angle)
     {
-        //로컬 좌표계 기준으로 설정하기 위해 적 캐릭터의
-        //Y 회전값을 더함
         angle += transform.eulerAngles.y;
         return new Vector3(Mathf.Sign(angle * Mathf.Deg2Rad), 0, Mathf.Cos(angle * Mathf.Deg2Rad));
     }
@@ -38,9 +34,7 @@ public class EnemyFOV : MonoBehaviour
 
         bool isTrace = false;
 
-        Collider[] cols = Physics.OverlapSphere(enemyTr.position,
-                                                viewRange,
-                                                1 << PlayerLayer);
+        Collider[] cols = Physics.OverlapSphere(enemyTr.position, viewRange,1 << PlayerLayer);
 
         if (cols.Length == 1)
         {
@@ -61,7 +55,7 @@ public class EnemyFOV : MonoBehaviour
         Vector3 dir = (playerTr.position - enemyTr.position).normalized;
         if (Physics.Raycast(enemyTr.position, dir, out hit, viewRange, layerMask))
         {
-            isView = (hit.collider.CompareTag("Player"));
+            isView = (hit.collider.CompareTag("PLAYER"));
         }
         return isView;
     }

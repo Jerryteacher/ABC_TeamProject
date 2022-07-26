@@ -28,7 +28,7 @@ public class EnemyAI : MonoBehaviour
     private readonly int hashSpeed = Animator.StringToHash("Speed");
     void Awake()
     {
-        var player = GameObject.FindGameObjectWithTag("Player");
+        var player = GameObject.FindGameObjectWithTag("PLAYER");
         if (player != null)
             PlayerTr = player.GetComponent<Transform>();
 
@@ -41,7 +41,7 @@ public class EnemyAI : MonoBehaviour
         animator = GetComponent<Animator>();
         ws = new WaitForSeconds(0.3f);
     }
-    private void /*Start() //*/OnEnable()/*으로 변경*/
+    private void Start() /*OnEnable()으로 변경*/
     {   
         StartCoroutine(CheckState());
         StartCoroutine(Action());
@@ -52,21 +52,24 @@ public class EnemyAI : MonoBehaviour
     }
     IEnumerator CheckState()
     {
+        yield return new WaitForSeconds(1.0f);
         while (!isDie)
         {
             if (state == State.DIE) yield break;
             float dist = Vector3.Distance(PlayerTr.position, Tr.position);
-            if (dist <= attackDist)
+            if (dist < attackDist)
             {
-                if (enemyFov.isViewPlayer())
-                    state = State.ATTACK;
-                else
-                    state = State.TRACE;
+                state = State.ATTACK;
             }
-            else if (enemyFov.isTracePlayer())
+            else if (dist < traceDist)
+            {
                 state = State.TRACE;
+            }
             else
+            {
                 state = State.PATROL;
+            }
+            //0.3초 동안 대기하는 동안 프레임 제어권을 양보
             yield return ws;
         }
     }
