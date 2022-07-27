@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8f095407af67f5a44bbad247d5aa0040
+=======
+guid: a90939416572b02478e2d92261b5efdc
+>>>>>>> parent of a9208c9 (player fall , landng 추가)
 DefaultImporter:
   externalObjects: {}
   userData: 
