@@ -3290,58 +3290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 250708459, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 250708459, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 350417555, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 350417555, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 676868330, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 676868330, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 877223159, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Center.x
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 877223159, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 877223159, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.z
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 877223159, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_MoveThreshold
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122292952, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.x
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790947422, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790947422, guid: dfec399a5d0bac44fa752e233e102741, type: 3}
-      propertyPath: m_Extents.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 219483302689746003, guid: dfec399a5d0bac44fa752e233e102741,
         type: 3}
       propertyPath: m_Name
