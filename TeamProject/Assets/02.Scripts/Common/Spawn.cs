@@ -12,50 +12,42 @@ public class Spawn : MonoBehaviour
     public bool IsGameOver = false;
     public GameObject[] Enemies;
     List<GameObject> EnemyPool = new List<GameObject>();
-    private void Awake()
+   
+    void Start()
     {
         tr = GetComponent<Transform>();
         boxCollider = GetComponent<BoxCollider>();
-        CreatePoolling();
-    }
-    void Start()
-    {
-        //StartCoroutine(RandomSpawn());
-    }
-    void Update()
-    {
-
-    }
-    private void CreatePoolling()
-    {
-        for(int i = 0; i<maxCount; i++)
+        for (int i = 0; i < maxCount; i++)
         {
             int enemyidx = Random.Range(0, 2);
-            GameObject Enemy = Instantiate(EnemyPrefab[enemyidx], RandomPosition(),Quaternion.identity) ;
-            Enemy.name = "Enemy" + (i+1).ToString();
-            Enemy.SetActive(true);
+            GameObject Enemy = Instantiate(EnemyPrefab[enemyidx], RandomPosition(), Quaternion.identity);
+            Enemy.name = "Enemy" + (i + 1).ToString();
+            Enemy.SetActive(false);
             EnemyPool.Add(Enemy);
         }
+        if (Enemies.Length > 0)
+            StartCoroutine(RandomSpawn());
     }
-    //IEnumerator RandomSpawn()
-    //{
-    //    while (true)
-    //    {
-    //        int enemyCount = (int)GameObject.FindGameObjectsWithTag(enemyTag).Length;
-    //        if (enemyCount < maxCount)
-    //        {
-    //            yield return new WaitForSeconds(1f);
-    //            int enemyidx = Random.Range(0, 2);
-    //            GameObject Enemy = Instantiate(EnemyPrefab[enemyidx], RandomPosition(), Quaternion.identity);
-    //            enemyCount++;
-    //        }
-    //        else
-    //        {
-    //            yield return null;
-    //        }
-    //    }
-    //}
-    Vector3 RandomPosition()  //박스 콜라이더 범위 내 랜덤값 
+ 
+    IEnumerator RandomSpawn()
+    {
+        while (true)
+        {
+            int enemyCount = (int)GameObject.FindGameObjectsWithTag(enemyTag).Length;
+            if (enemyCount < maxCount)
+            {
+                yield return new WaitForSeconds(1f);
+                int enemyidx = Random.Range(0, 2);
+                GameObject Enemy = Instantiate(EnemyPrefab[enemyidx], RandomPosition(), Quaternion.identity);
+                enemyCount++;
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+    }
+    public Vector3 RandomPosition()  //박스 콜라이더 범위 내 랜덤값 
     {
         Vector3 originPosition = tr.transform.position;
         float range_x = boxCollider.bounds.size.x; //박스 콜라이더의 x축 길이

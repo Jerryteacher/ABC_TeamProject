@@ -22,10 +22,12 @@ public class EnemyAI : MonoBehaviour
     private MoveAgent moveagent;
     private EnemyFOV enemyFov;
     private EnemyAttack enemyAttack;
-
+    private EnemyHealth enemyHealth;
+    private Spawn spawn;
     private readonly int hashMove = Animator.StringToHash("IsMove");
-
     private readonly int hashSpeed = Animator.StringToHash("Speed");
+    private readonly int hashDie = Animator.StringToHash("Die");
+    private readonly int hashDieIdx = Animator.StringToHash("DieIdx");
     void Awake()
     {
         var player = GameObject.FindGameObjectWithTag("PLAYER");
@@ -38,18 +40,18 @@ public class EnemyAI : MonoBehaviour
         moveagent = GetComponent<MoveAgent>();
         enemyAttack = GetComponent<EnemyAttack>();
         enemyFov = GetComponent<EnemyFOV>();
+        enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
+        spawn = GameObject.FindGameObjectWithTag("Spawn").GetComponent<Spawn>();
         ws = new WaitForSeconds(0.3f);
     }
-    private void Start() /*OnEnable()으로 변경*/
-    {   
+    private void OnEnable()
+    {
+        animator.SetInteger(hashDieIdx, Random.Range(0, 3));
         StartCoroutine(CheckState());
         StartCoroutine(Action());
     }
-    private void OnDisable()
-    {
-        
-    }
+ 
     IEnumerator CheckState()
     {
         yield return new WaitForSeconds(1.0f);
@@ -75,7 +77,7 @@ public class EnemyAI : MonoBehaviour
     }
     IEnumerator Action()
     {
-        while (!isDie)
+        while (isDie==false)
         {
             yield return ws;
             switch (state)
@@ -102,15 +104,17 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
-    private void Die()
+    public void Die()
     {
         this.gameObject.tag = "Untagged";
         isDie = true;
         moveagent.Stop();
-
+        
+        animator.SetTrigger(hashDie);
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         StopAllCoroutines();
+        StartCoroutine(PushObjectPool());
     }
     void Update()
     {
@@ -120,5 +124,16 @@ public class EnemyAI : MonoBehaviour
     {
         moveagent.Stop();
         StopAllCoroutines();
+    }
+    IEnumerator PushObjectPool()
+    {
+        yield return new WaitForSeconds(3.0f);
+        isDie = false;
+        enemyHealth.Hp = enemyHealth.MaxHp;
+        gameObject.tag = "Enemy";
+        state = State.PATROL;
+        GetComponent<CapsuleCollider>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        gameObject.SetActive(true);
     }
 }
