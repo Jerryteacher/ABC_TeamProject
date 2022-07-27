@@ -13111,7 +13111,40 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 8221114819028492925, guid: e78e861e5bfa15147a9a2eba57d05fa7,
+=======
+    - target: {fileID: 8932940112288358695, guid: 9487ccace9c51cf428b475e4bc014682,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7bdc2d5f68853f43b9023972e0a688a, type: 2}
+    - target: {fileID: 8932940112288358697, guid: 9487ccace9c51cf428b475e4bc014682,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a7782c65c7520d45be3e8ef87b3b9d3, type: 2}
+    - target: {fileID: 8932940112288358699, guid: 9487ccace9c51cf428b475e4bc014682,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7bdc2d5f68853f43b9023972e0a688a, type: 2}
+    - target: {fileID: 8932940112288358703, guid: 9487ccace9c51cf428b475e4bc014682,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7bdc2d5f68853f43b9023972e0a688a, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9487ccace9c51cf428b475e4bc014682, type: 3}
+--- !u!1001 &8940890472713932799
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 606020049}
+    m_Modifications:
+    - target: {fileID: 8940890473143797448, guid: 2988d45365eb33e49af1e2fb5cad6218,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
