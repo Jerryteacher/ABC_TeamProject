@@ -12,7 +12,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 8ce168a913a4f2944bf7789b0ef675bf, type: 3}
   m_Controller: {fileID: 9100000, guid: edf2224b2d8856242bdc472257dae405, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -123,13 +123,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8c8e6cd9a09884aaeb4a56c64d4ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
   myTransform: {fileID: 0}
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
   nomalCamera: {fileID: 0}
+  groundDetectionRayStartPoint: 0.5
+  minumumDistanceNeededToBeginFall: 1
+  groundDirectionRayDistance: 0.2
+  inAirTimer: 0
   movementSpeed: 2.5
   sprintSpeed: 7
   rotationSpeed: 10
+  fallingSpeed: 45
 --- !u!114 &1960019791581930992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInteracting: 0
   isSprinting: 0
+  isInAir: 0
+  isGrounded: 0
   canDoCombo: 0
 --- !u!114 &1960019791581930993
 MonoBehaviour:
