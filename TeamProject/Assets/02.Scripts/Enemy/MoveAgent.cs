@@ -46,7 +46,7 @@ public class MoveAgent : MonoBehaviour
     {
         get { return agent.velocity.magnitude; }
     }
-    void OnEnable()
+    void Start()
     {
         enemyTr = GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>(); 

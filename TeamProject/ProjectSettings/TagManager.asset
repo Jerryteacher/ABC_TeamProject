@@ -8,8 +8,6 @@ TagManager:
   - Fire
   - Stage
   - PLAYER
-  - WEAPON
-  - Spawn
   layers:
   - Default
   - TransparentFX
@@ -21,7 +19,7 @@ TagManager:
   - 
   - PLAYER
   - OBSTACLE
-  - WEAPON
+  - 
   - 
   - 
   - 

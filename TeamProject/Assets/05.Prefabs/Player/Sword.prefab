@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2293953834825411375}
   - component: {fileID: 2284101858252407999}
   - component: {fileID: 2274704371378463945}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sword_DH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2286711553325924236}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Weapon Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,51 +110,6 @@ Transform:
   m_Father: {fileID: 3819043987780549932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -7.0540004, y: -67.450005, z: 78.727005}
---- !u!1 &4693833279672526524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7991402272676209230}
-  - component: {fileID: 550205593594762012}
-  m_Layer: 10
-  m_Name: HITBox
-  m_TagString: WEAPON
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7991402272676209230
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693833279672526524}
-  m_LocalRotation: {x: -0.011790582, y: 0.18821146, z: -0.06140103, w: 0.9801364}
-  m_LocalPosition: {x: -0.442, y: 0.153, z: 0.209}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3819043987780549932}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 21.740002, z: -7.169}
---- !u!136 &550205593594762012
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4693833279672526524}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.1
-  m_Height: 1.5
-  m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6518247267649246356
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,9 +119,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3819043987780549932}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sword
-  m_TagString: WEAPON
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +138,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2286711553325924236}
-  - {fileID: 7991402272676209230}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
