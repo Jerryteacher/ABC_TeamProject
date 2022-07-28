@@ -24,7 +24,6 @@ public class EnemyAI : MonoBehaviour
     private EnemyAttack enemyAttack;
 
     private readonly int hashMove = Animator.StringToHash("IsMove");
-
     private readonly int hashSpeed = Animator.StringToHash("Speed");
     void Awake()
     {

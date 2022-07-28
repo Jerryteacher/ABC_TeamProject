@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1874286821}
   - component: {fileID: 1874286822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024640950}
   - component: {fileID: 2024640951}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4592067600125701793}
   - component: {fileID: 4592067600124734561}
   - component: {fileID: 1203418280}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: sawmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 4592067600126669473}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -16.06, y: 0, z: -0.8958335}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 80, y: 80, z: 80}
   m_Children:
   - {fileID: 1874286821}
   - {fileID: 2024640950}

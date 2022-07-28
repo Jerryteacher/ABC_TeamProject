@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 6250561903515386112}
   - component: {fileID: 6250561903515386119}
   - component: {fileID: 6250561903515386118}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fi_vil_tries_wood02_base_2wide_woodenbeam (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 6250561903779145019}
   - component: {fileID: 6250561903779145018}
   - component: {fileID: 6250561903779145017}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fi_vil_roof_woodentile01_2X3_F (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 6250561904058949337}
   - component: {fileID: 6250561904058949336}
   - component: {fileID: 6250561904058949343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fi_vil_door_square02_left (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 6250561904263122847}
   - component: {fileID: 6250561904263122846}
   - component: {fileID: 6250561904263122845}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fi_vil_tries_wood02_base_2wide_woodenbeam (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 6250561904582919058}
   - component: {fileID: 6250561904583917906}
   - component: {fileID: 124509505442838496}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: House01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,7 +509,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9, y: 3, z: 5.600038}
+  m_Size: {x: 9, y: 3, z: 6.5}
   m_Center: {x: -0.0000345707, y: 4.5, z: 0.000066995635}
 --- !u!1001 &165585170
 PrefabInstance:
@@ -522,6 +522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Barrel3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5460333091404962155, guid: 4fcfe43902a1fda4796a99b855d18196,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5460333091405382987, guid: 4fcfe43902a1fda4796a99b855d18196,
         type: 3}
@@ -619,6 +624,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5460333091404962155, guid: 4fcfe43902a1fda4796a99b855d18196,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5460333091405382987, guid: 4fcfe43902a1fda4796a99b855d18196,
         type: 3}
       propertyPath: m_RootOrder
@@ -714,6 +724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fi_vil_wall_stone01_win1_1mX1m (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8c63b409002669d41bb65947b09e2b9b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8c63b409002669d41bb65947b09e2b9b, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -776,6 +790,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_Name
       value: fi_vil_wall_stone01_base (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_RootOrder
@@ -840,6 +858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fi_vil_wall_stone01_base (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -902,6 +924,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_Name
       value: fi_vil_wall_stone01_base (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_RootOrder
@@ -966,6 +992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fi_vil_wall_stone01_base (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1028,6 +1058,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_Name
       value: fi_vil_wall_stone01_base (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_RootOrder
@@ -1092,6 +1126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fi_vil_wall_stone01_base (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1154,6 +1192,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_Name
       value: fi_vil_wall_stone01_base (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 120b628707d512840ac2d40f8aca21ed, type: 3}
       propertyPath: m_RootOrder
@@ -1218,6 +1260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fi_vil_wall_stone01_door_square
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6d6ac053cadd6244a8507e11fccaab56, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d6ac053cadd6244a8507e11fccaab56, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1280,6 +1326,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8c63b409002669d41bb65947b09e2b9b, type: 3}
       propertyPath: m_Name
       value: fi_vil_wall_stone01_win1_1mX1m
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8c63b409002669d41bb65947b09e2b9b, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8c63b409002669d41bb65947b09e2b9b, type: 3}
       propertyPath: m_RootOrder

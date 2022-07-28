@@ -263,7 +263,6 @@ GameObject:
   - component: {fileID: 1478272751084210031}
   - component: {fileID: 3758678655364830835}
   - component: {fileID: 190499957835489604}
-  - component: {fileID: -5663574689634534983}
   - component: {fileID: -7150202470590139922}
   - component: {fileID: 3326408847280115910}
   m_Layer: 0
@@ -282,7 +281,7 @@ Transform:
   m_GameObject: {fileID: 6012815652024110128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.2257347, y: 6.47, z: -14.332325}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 6012815652023820432}
   - {fileID: 6012815652023820506}
@@ -393,20 +392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttack: 0
---- !u!114 &-5663574689634534983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6012815652024110128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e797464271a41ed409644462b1fd7fde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRange: 10
-  viewAngle: 120
 --- !u!114 &-7150202470590139922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4523f5913f879f43a24758e39a9eed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hp: 0
+  MaxHp: 100
+  Damage: 30
+  animator: {fileID: 6012815652016807914}
 --- !u!114 &3326408847280115910
 MonoBehaviour:
   m_ObjectHideFlags: 0
