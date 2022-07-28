@@ -12,7 +12,6 @@ public class EnemyAI : MonoBehaviour
 
     private Transform PlayerTr;
     private Transform Tr;
-    private Animator Ani;
     public float traceDist = 10f;
     public float attackDist = 3f;
     public bool isDie = false;
@@ -22,7 +21,11 @@ public class EnemyAI : MonoBehaviour
     private MoveAgent moveagent;
     private EnemyFOV enemyFov;
     private EnemyAttack enemyAttack;
+    private EnemyHealth enemyHealth;
 
+    private readonly int hashIdx = Animator.StringToHash("Idx");
+    private readonly int hashDieIdx = Animator.StringToHash("DieIdx");
+    private readonly int hashDie= Animator.StringToHash("Die");
     private readonly int hashMove = Animator.StringToHash("IsMove");
     private readonly int hashSpeed = Animator.StringToHash("Speed");
     void Awake()
@@ -32,16 +35,18 @@ public class EnemyAI : MonoBehaviour
             PlayerTr = player.GetComponent<Transform>();
 
         Tr = GetComponent<Transform>();
-        Ani = GetComponent<Animator>();
 
         moveagent = GetComponent<MoveAgent>();
         enemyAttack = GetComponent<EnemyAttack>();
         enemyFov = GetComponent<EnemyFOV>();
+        enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
         ws = new WaitForSeconds(0.3f);
     }
-    private void Start() /*OnEnable()으로 변경*/
-    {   
+    private void OnEnable()
+    {
+        animator.SetInteger(hashIdx, Random.Range(0, 3));
+        animator.SetInteger(hashDieIdx, Random.Range(0, 3));
         StartCoroutine(CheckState());
         StartCoroutine(Action());
     }
@@ -51,7 +56,6 @@ public class EnemyAI : MonoBehaviour
     }
     IEnumerator CheckState()
     {
-        yield return new WaitForSeconds(1.0f);
         while (!isDie)
         {
             if (state == State.DIE) yield break;
@@ -68,7 +72,6 @@ public class EnemyAI : MonoBehaviour
             {
                 state = State.PATROL;
             }
-            //0.3초 동안 대기하는 동안 프레임 제어권을 양보
             yield return ws;
         }
     }
@@ -106,10 +109,11 @@ public class EnemyAI : MonoBehaviour
         this.gameObject.tag = "Untagged";
         isDie = true;
         moveagent.Stop();
-
+        animator.SetTrigger(hashDie);
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
         StopAllCoroutines();
+        StartCoroutine(PushObjectPool());
     }
     void Update()
     {
@@ -119,5 +123,16 @@ public class EnemyAI : MonoBehaviour
     {
         moveagent.Stop();
         StopAllCoroutines();
+    }
+    IEnumerator PushObjectPool()
+    {
+        yield return new WaitForSeconds(5f);
+        isDie = false;
+        enemyHealth.Hp = enemyHealth.MaxHp;        
+        gameObject.tag = "Enemy";
+        state = State.PATROL;
+        GetComponent<CapsuleCollider>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        gameObject.SetActive(false);
     }
 }

@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     private const string WeaponTag = "WEAPON";
     [SerializeField]
-    private float Hp = 0f;
+    public float Hp = 0f;
     public float MaxHp = 100f;
     public float Damage = 30f; 
     [SerializeField]

@@ -969,7 +969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hp: 0
   MaxHp: 100
-  Damage: 30
+  Damage: 100
   animator: {fileID: 2910756267744047507}
 --- !u!1 &2969872060890451457
 GameObject:

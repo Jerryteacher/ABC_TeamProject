@@ -12,11 +12,20 @@ public class Spawn : MonoBehaviour
     public bool IsGameOver = false;
     public GameObject[] Enemies;
     List<GameObject> EnemyPool = new List<GameObject>();
+    public float CreateTime = 3.0f;
     private void Awake()
     {
         tr = GetComponent<Transform>();
         boxCollider = GetComponent<BoxCollider>();
-        CreatePoolling();
+        StartCoroutine(CreatePoolling());
+        for (int i = 0; i < maxCount; i++)
+        {
+            int enemyidx = Random.Range(0, 2);
+            GameObject Enemy = Instantiate(EnemyPrefab[enemyidx], RandomPosition(), Quaternion.identity);
+            Enemy.name = "Enemy" + (i + 1).ToString();
+            Enemy.SetActive(true);
+            EnemyPool.Add(Enemy);
+        }
     }
     void Start()
     {
@@ -26,15 +35,20 @@ public class Spawn : MonoBehaviour
     {
 
     }
-    private void CreatePoolling()
+    IEnumerator CreatePoolling()
     {
-        for(int i = 0; i<maxCount; i++)
+        while (!IsGameOver)
         {
-            int enemyidx = Random.Range(0, 2);
-            GameObject Enemy = Instantiate(EnemyPrefab[enemyidx], RandomPosition(),Quaternion.identity) ;
-            Enemy.name = "Enemy" + (i+1).ToString();
-            Enemy.SetActive(true);
-            EnemyPool.Add(Enemy);
+            yield return new WaitForSeconds(CreateTime);
+            if (IsGameOver) yield break;
+            foreach(GameObject enemy in EnemyPool)
+            {
+                if(enemy.activeSelf == false)
+                {
+                    //int idx = Random.Range(1,)
+                }
+            }
+            
         }
     }
     //IEnumerator RandomSpawn()
