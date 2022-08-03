@@ -8,6 +8,12 @@ public class EnemyAI : MonoBehaviour
     {
         PATROL, TRACE, ATTACK, DIE
     }
+    public enum ENEMY_KIND
+    {
+        //enemy1 = 산적 기지에서 스폰하는 일반 적
+        //enemy2 = 폐허에서 스폰하는 일반 적
+        enemy1 = 1, enemy2
+    }
     public State state = State.PATROL;
 
     private Transform PlayerTr;
@@ -49,10 +55,6 @@ public class EnemyAI : MonoBehaviour
         animator.SetInteger(hashDieIdx, Random.Range(0, 3));
         StartCoroutine(CheckState());
         StartCoroutine(Action());
-    }
-    private void OnDisable()
-    {
-        
     }
     IEnumerator CheckState()
     {
@@ -112,6 +114,7 @@ public class EnemyAI : MonoBehaviour
         animator.SetTrigger(hashDie);
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
+        GameManager.instance.incKillCount();
         StopAllCoroutines();
         StartCoroutine(PushObjectPool());
     }

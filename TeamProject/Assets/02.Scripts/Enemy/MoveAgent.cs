@@ -14,7 +14,7 @@ public class MoveAgent : MonoBehaviour
     float damping = 1.0f;
     private NavMeshAgent agent;
     private Transform enemyTr;
-
+    public EnemyAI.ENEMY_KIND enemykind;
     private bool _patrolling;
     public bool patrolling
     {
@@ -53,8 +53,7 @@ public class MoveAgent : MonoBehaviour
         agent.autoBraking = false;
         agent.updateRotation = false;
         agent.speed = patrolSpeed;
-
-        var group = GameObject.Find("WayPointGroup");
+        var group = GameObject.Find("StrongholdWayPoint");
         if (group != null)
         {
             group.GetComponentsInChildren<Transform>(wayPoints);

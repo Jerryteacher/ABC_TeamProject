@@ -11,25 +11,33 @@ public class EnemyHealth : MonoBehaviour
     public float Damage = 30f; 
     [SerializeField]
     private Animator animator;
+    public GameDataObject gameData;
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
     private void OnEnable()
     {
-        Hp = MaxHp;
+        Hp = MaxHp+(gameData.KillCount*10);
     }
     private void OnCollisionEnter(Collision col)
     {
         if(col.collider.tag == WeaponTag)
         {
             Debug.Log("Hit");
-            animator.SetTrigger("Hit");
             Hp -= Damage;
-            if(Hp<=0)
-            {
+            if (Hp <= 0)
                 GetComponent<EnemyAI>().state = EnemyAI.State.DIE;
-            }
+            else
+                animator.SetTrigger("Hit");
         }
+    }
+    void SaveGameData()
+    {
+        UnityEditor.EditorUtility.SetDirty(gameData);
+    }
+    private void OnApplicationQuit()
+    {
+        SaveGameData();
     }
 }

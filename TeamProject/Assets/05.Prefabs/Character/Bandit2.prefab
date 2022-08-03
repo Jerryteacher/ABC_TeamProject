@@ -408,6 +408,7 @@ MonoBehaviour:
   MaxHp: 100
   Damage: 100
   animator: {fileID: 6012815652016807914}
+  gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
 --- !u!114 &3326408847280115910
 MonoBehaviour:
   m_ObjectHideFlags: 0
