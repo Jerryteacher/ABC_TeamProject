@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +71,17 @@ public class GameManager : MonoBehaviour
         Boss.SetActive(false);
         EnemyPool1.Add(Boss);
         StartCoroutine(CreateBoss());
+
+        //UI
+        SceneManager.LoadScene("MainUI", LoadSceneMode.Additive);
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Start()
+    {
+        //UI
+        DontDestroyOnLoad(UIManager.getInstance.gameObject);
+        DontDestroyOnLoad(FindObjectOfType<EventSystem>());
     }
     IEnumerator CreateStrongHold()
     {
