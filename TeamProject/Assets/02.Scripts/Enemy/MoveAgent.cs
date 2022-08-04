@@ -14,7 +14,6 @@ public class MoveAgent : MonoBehaviour
     float damping = 1.0f;
     private NavMeshAgent agent;
     private Transform enemyTr;
-    public EnemyAI.ENEMY_KIND enemykind;
     private bool _patrolling;
     public bool patrolling
     {
@@ -42,23 +41,38 @@ public class MoveAgent : MonoBehaviour
             TraceTarget(_traceTarget);
         }
     }
+    EnemyAI enemyAI;
     public float speed
     {
         get { return agent.velocity.magnitude; }
     }
     void Start()
     {
+        enemyAI = GetComponent<EnemyAI>();
         enemyTr = GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>(); 
         agent.autoBraking = false;
         agent.updateRotation = false;
         agent.speed = patrolSpeed;
-        var group = GameObject.Find("StrongholdWayPoint");
-        if (group != null)
+        if (enemyAI.Type == EnemyAI.ENEMY_Type.enemy1)
         {
-            group.GetComponentsInChildren<Transform>(wayPoints);
-            wayPoints.RemoveAt(0);
-            nexIdx = Random.Range(0, wayPoints.Count);
+           var group = GameObject.Find("StrongholdWayPoint");
+            if (group != null)
+            {
+                group.GetComponentsInChildren<Transform>(wayPoints);
+                wayPoints.RemoveAt(0);
+                nexIdx = Random.Range(0, wayPoints.Count);
+            }
+        }
+        else
+        {
+            var group = GameObject.Find("RuinWayPoint");
+            if (group != null)
+            {
+                group.GetComponentsInChildren<Transform>(wayPoints);
+                wayPoints.RemoveAt(0);
+                nexIdx = Random.Range(0, wayPoints.Count);
+            }
         }
         MoveWayPoint();
     }
