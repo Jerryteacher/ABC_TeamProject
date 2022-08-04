@@ -108,7 +108,7 @@ public class EnemyAI : MonoBehaviour
                     break;
                 case State.ATTACK:
                     moveagent.Stop();
-                    animator.SetBool(hashMove, false);
+                    //animator.SetBool(hashMove, false);
                     if (enemyAttack.isAttack == false)
                         enemyAttack.isAttack = true;                    
                     break;

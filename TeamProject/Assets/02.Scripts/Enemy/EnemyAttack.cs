@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
             if (Time.time>= nextAttack)
             {
                 animator.SetTrigger(hashAttack);
-                nextAttack = Time.time + AttackRate + Random.Range(3f,5f);
+                nextAttack = Time.time + AttackRate + Random.Range(3f,4f);
             }
             Quaternion rot = Quaternion.LookRotation(playerTr.position - tr.position);
             tr.rotation = Quaternion.Slerp(tr.rotation, rot, Time.deltaTime * damping);
