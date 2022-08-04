@@ -13,6 +13,7 @@ namespace SG
 
         public bool isInteracting;
 
+        //bool 관리
         [Header("Player Flags")]
         public bool isSprinting;
         public bool isInAir;
@@ -21,7 +22,7 @@ namespace SG
 
         private void Awake()
         {
-            cameraHandler = CameraHandler.singleton;
+            cameraHandler = FindObjectOfType<CameraHandler>();
         }
 
         void Start()
