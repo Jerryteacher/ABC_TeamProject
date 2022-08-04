@@ -1088,6 +1088,7 @@ GameObject:
   - component: {fileID: 919132147826897825}
   - component: {fileID: 919132147826897827}
   - component: {fileID: 919132147826897828}
+  - component: {fileID: -8300239885786632558}
   m_Layer: 0
   m_Name: brute
   m_TagString: Enemy
@@ -1243,6 +1244,21 @@ MonoBehaviour:
   traceDist: 20
   attackDist: 3
   isDie: 0
+--- !u!114 &-8300239885786632558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296580755299339779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b0a3d78197cf84bb99d65e6c63fe35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 2.4, z: 0}
+  HpbarPrefab: {fileID: 0}
+  rectParent: {fileID: 0}
 --- !u!1 &2351967296569783176
 GameObject:
   m_ObjectHideFlags: 0

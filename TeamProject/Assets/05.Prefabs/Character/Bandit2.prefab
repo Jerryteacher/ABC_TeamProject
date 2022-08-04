@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 190499957835489604}
   - component: {fileID: -7150202470590139922}
   - component: {fileID: 3326408847280115910}
+  - component: {fileID: -4099906805207134613}
   m_Layer: 0
   m_Name: Bandit2
   m_TagString: Enemy
@@ -424,6 +425,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wayPoints: []
   nexIdx: 0
+--- !u!114 &-4099906805207134613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012815652024110128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b0a3d78197cf84bb99d65e6c63fe35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 2.1, z: 0}
+  HpbarPrefab: {fileID: 0}
+  rectParent: {fileID: 0}
 --- !u!1 &6012815652024110130
 GameObject:
   m_ObjectHideFlags: 0

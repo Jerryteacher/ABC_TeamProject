@@ -5,24 +5,34 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     private const string WeaponTag = "WEAPON";
-    [SerializeField]
     public float Hp = 0f;
-    public float MaxHp = 100f;
-    public float Damage = 30f; 
+    [SerializeField]
+    private float maxHp = 0f;
+    public float initHp = 100f;
+    public float Damage = 30f;
     [SerializeField]
     private Animator animator;
     public GameDataObject gameData;
+
+    public float MaxHp 
+    { 
+        get
+        {
+            return maxHp;
+        }
+    }
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
     private void OnEnable()
     {
-        Hp = MaxHp+(gameData.KillCount*10);
+        //maxHp = initHp + (gameData.KillCount * 10);
+        maxHp = Hp = initHp + (gameData.KillCount * 10);
     }
     private void OnCollisionEnter(Collision col)
     {
-        if(col.collider.tag == WeaponTag)
+        if (col.collider.tag == WeaponTag)
         {
             Debug.Log("Hit");
             Hp -= Damage;

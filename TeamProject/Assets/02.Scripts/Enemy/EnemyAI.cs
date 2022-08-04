@@ -143,11 +143,12 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         isDie = false;
-        enemyHealth.Hp = enemyHealth.MaxHp;        
+        enemyHealth.Hp = enemyHealth.initHp;        
         gameObject.tag = "Enemy";
         state = State.PATROL;
         GetComponent<CapsuleCollider>().enabled = true;
         GetComponent<Rigidbody>().isKinematic = false;
         gameObject.SetActive(false);
+        GetComponent<EnemyHpbar>().IsShow = false;
     }
 }

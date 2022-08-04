@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 8829042262887687639}
   - component: {fileID: 818518975138527741}
   - component: {fileID: 7751352059668865840}
+  - component: {fileID: -2983129639145909936}
   m_Layer: 0
   m_Name: Bandit1
   m_TagString: Enemy
@@ -973,6 +974,21 @@ MonoBehaviour:
   Damage: 100
   animator: {fileID: 2910756267744047507}
   gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
+--- !u!114 &-2983129639145909936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969872060761616475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b0a3d78197cf84bb99d65e6c63fe35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: 2.1, z: 0}
+  HpbarPrefab: {fileID: 0}
+  rectParent: {fileID: 0}
 --- !u!1 &2969872060890451457
 GameObject:
   m_ObjectHideFlags: 0
