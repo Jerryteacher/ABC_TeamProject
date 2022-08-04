@@ -8,13 +8,17 @@ public class EnemyAI : MonoBehaviour
     {
         PATROL, TRACE, ATTACK, DIE
     }
-    public enum ENEMY_KIND
+    public State state = State.PATROL;
+    public enum ENEMY_Type
     {
         //enemy1 = 산적 기지에서 스폰하는 일반 적
         //enemy2 = 폐허에서 스폰하는 일반 적
         enemy1 = 1, enemy2
     }
-    public State state = State.PATROL;
+    public ENEMY_Type Type;
+
+    private Transform PointTr1;
+    private Transform PointTr2;
 
     private Transform PlayerTr;
     private Transform Tr;
@@ -41,7 +45,8 @@ public class EnemyAI : MonoBehaviour
             PlayerTr = player.GetComponent<Transform>();
 
         Tr = GetComponent<Transform>();
-
+        PointTr1 = GameObject.Find("StrongHoldSpawnPoint").GetComponent<Transform>();
+        PointTr2 = GameObject.Find("RuinSpawnPoint").GetComponent<Transform>();
         moveagent = GetComponent<MoveAgent>();
         enemyAttack = GetComponent<EnemyAttack>();
         enemyFov = GetComponent<EnemyFOV>();
@@ -61,6 +66,13 @@ public class EnemyAI : MonoBehaviour
         while (!isDie)
         {
             if (state == State.DIE) yield break;
+            float Pointdist1 = Vector3.Distance(Tr.position, PointTr1.position);
+            float Pointdist2 = Vector3.Distance(Tr.position, PointTr2.position);
+            if (Pointdist1<Pointdist2)
+            {
+                Type= ENEMY_Type.enemy1;
+            }
+            else { Type = ENEMY_Type.enemy2; }
             float dist = Vector3.Distance(PlayerTr.position, Tr.position);
             if (dist < attackDist)
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     private DataManager dataManager;
     public GameDataObject gameData;
+    
+   
     void Awake()
     {
         if (instance == null)
@@ -38,7 +41,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
         Points1 = SpawnPoint1.GetComponentsInChildren<Transform>();
-        Points2 = SpawnPoint1.GetComponentsInChildren<Transform>();
+        Points2 = SpawnPoint2.GetComponentsInChildren<Transform>();
         for (int i = 0; i < strongholdmaxCount; i++)
         {
             int enemyidx = Random.Range(0, 2);
@@ -46,7 +49,11 @@ public class GameManager : MonoBehaviour
             Enemy.name = "Stronghold Enemy" + (i + 1).ToString();
             Enemy.SetActive(false);
             EnemyPool1.Add(Enemy);
+            
         }
+        if (Points1.Length > 0)
+            StartCoroutine(CreateStrongHold());
+
         for (int i = 0; i < ruinmaxCount; i++)
         {
             int enemyidx = Random.Range(0, 2);
@@ -54,18 +61,16 @@ public class GameManager : MonoBehaviour
             Enemy.name = "Ruin Enemy" + (i + 1).ToString();
             Enemy.SetActive(false);
             EnemyPool2.Add(Enemy);
-        }
-        if (Points1.Length > 0)
-            StartCoroutine(CreateStrongHold());
+        }       
         if (Points2.Length > 0)
             StartCoroutine(CreateRuin());
+
         GameObject Boss = Instantiate(BossPrefab);
         Boss.name = "Boss";
         Boss.SetActive(false);
         EnemyPool1.Add(Boss);
         StartCoroutine(CreateBoss());
     }
-    
     IEnumerator CreateStrongHold()
     {
         while (!IsGameOver)
@@ -78,7 +83,7 @@ public class GameManager : MonoBehaviour
                 {
                     int idx = Random.Range(1, Points1.Length);
                     enemy.transform.position = Points1[idx].position;
-                    enemy.SetActive(true);
+                    enemy.SetActive(true);                  
                     break;
                 }
             }
