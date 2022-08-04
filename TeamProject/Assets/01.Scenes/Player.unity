@@ -912,31 +912,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1649626511}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1719892988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7178426989170446956, guid: fe738290b9d7c1748a671f1879fff47b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8268757526939859167}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1719892993
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719892988}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 02704e4f6f3dbd841a2db304b4f72f40, type: 3}
-  m_Controller: {fileID: 9100000, guid: e279d3737472f4a41ab8b3027888140f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1784461043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1200,7 @@ PrefabInstance:
     - target: {fileID: 7178426989170446956, guid: fe738290b9d7c1748a671f1879fff47b,
         type: 3}
       propertyPath: m_Name
-      value: Hp test
+      value: ENEMY TEST
       objectReference: {fileID: 0}
     - target: {fileID: 7554003310007847126, guid: fe738290b9d7c1748a671f1879fff47b,
         type: 3}

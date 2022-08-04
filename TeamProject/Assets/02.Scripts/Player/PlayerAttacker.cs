@@ -36,7 +36,7 @@ namespace SG
 
                 else if (lastAttack == "great_sword_slash_3")
                 {
-                    animatorHandler.PlayTargetAnimation("great_sword_kick_4", true);
+                    animatorHandler.PlayTargetAnimation("great_sword_slash_4", true);
                 }
             }
         }
