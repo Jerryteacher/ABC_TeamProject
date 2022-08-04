@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -28,8 +27,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     private DataManager dataManager;
     public GameDataObject gameData;
-    
-   
+
+
     void Awake()
     {
         if (instance == null)
@@ -50,7 +49,7 @@ public class GameManager : MonoBehaviour
             Enemy.name = "Stronghold Enemy" + (i + 1).ToString();
             Enemy.SetActive(false);
             EnemyPool1.Add(Enemy);
-            
+
         }
         if (Points1.Length > 0)
             StartCoroutine(CreateStrongHold());
@@ -62,7 +61,7 @@ public class GameManager : MonoBehaviour
             Enemy.name = "Ruin Enemy" + (i + 1).ToString();
             Enemy.SetActive(false);
             EnemyPool2.Add(Enemy);
-        }       
+        }
         if (Points2.Length > 0)
             StartCoroutine(CreateRuin());
 
@@ -71,17 +70,6 @@ public class GameManager : MonoBehaviour
         Boss.SetActive(false);
         EnemyPool1.Add(Boss);
         StartCoroutine(CreateBoss());
-
-        //UI
-        SceneManager.LoadScene("MainUI", LoadSceneMode.Additive);
-        DontDestroyOnLoad(this.gameObject);
-    }
-
-    private void Start()
-    {
-        //UI
-        DontDestroyOnLoad(UIManager.getInstance.gameObject);
-        DontDestroyOnLoad(FindObjectOfType<EventSystem>());
     }
     IEnumerator CreateStrongHold()
     {
@@ -95,7 +83,7 @@ public class GameManager : MonoBehaviour
                 {
                     int idx = Random.Range(1, Points1.Length);
                     enemy.transform.position = Points1[idx].position;
-                    enemy.SetActive(true);                  
+                    enemy.SetActive(true);
                     break;
                 }
             }
@@ -123,20 +111,22 @@ public class GameManager : MonoBehaviour
     {
         while (!IsGameOver)
         {
+
             yield return new WaitForSeconds(BossCreateTime);
             if (IsGameOver) yield break;
             foreach (GameObject Boss in EnemyPool1)
             {
                 if (Boss.activeSelf == false)
                 {
-                    Boss.transform.position = Points1[0].position;
+                    int idx = Random.Range(1, Points1.Length);
+                    Boss.transform.position = Points1[idx].position;
                     Boss.SetActive(true);
                     break;
                 }
             }
         }
     }
-     
+
     public void incKillCount()
     {
         ++gameData.KillCount;

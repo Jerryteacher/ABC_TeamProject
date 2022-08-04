@@ -1122,7 +1122,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9d4601d03b6ab20458ab81211319a7cf, type: 3}
   m_Controller: {fileID: 9100000, guid: 4e54ed55bb19448408f5ed2e85871b9b, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1239,7 +1239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  traceDist: 10
+  Type: 0
+  traceDist: 20
   attackDist: 3
   isDie: 0
 --- !u!1 &2351967296569783176
