@@ -9,7 +9,7 @@ public class SearchInteraction : MonoBehaviour
     [SerializeField] float EnemyHpChkradius = 3f;
     bool IsSearching = false;
     bool hasInteraction = false;
-    
+
 
     private void OnEnable()
     {
@@ -21,12 +21,24 @@ public class SearchInteraction : MonoBehaviour
     private void OnDisable()
     {
         IsSearching = false;
-        if(UIManager.getInstance != null)
-        UIManager.getInstance.ShowInteraction(false);
+        if (UIManager.getInstance != null)
+            UIManager.getInstance.ShowInteraction(false);
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (interObj != null)
+            {
+
+                interObj.GetComponent<IInteractionObject>().ActionInter();
+            }
+
+
+
+        }
+
         /*
          * 
          * if(InputManager.GetInputInteractionKey)
@@ -45,7 +57,7 @@ public class SearchInteraction : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         while (IsSearching)
         {
-            { 
+            {
                 Collider[] cols = Physics.OverlapSphere(transform.position, radius);
                 IInteractionObject _obj = null;
                 GameObject minDistObj = null;
@@ -89,7 +101,7 @@ public class SearchInteraction : MonoBehaviour
                 }
             }
             {
-                Collider[] cols = Physics.OverlapSphere(transform.position, EnemyHpChkradius+2);
+                Collider[] cols = Physics.OverlapSphere(transform.position, EnemyHpChkradius + 2);
                 foreach (Collider col in cols)
                 {
                     // 예외처리

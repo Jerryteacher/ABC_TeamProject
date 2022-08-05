@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 6391816839947319239}
   - component: {fileID: 6391816839947319233}
   - component: {fileID: 6391816839947319232}
+  - component: {fileID: 4890471794903578696}
   m_Layer: 5
   m_Name: InterItem
   m_TagString: Untagged
@@ -386,3 +387,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4890471794903578696
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6391816839947319238}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

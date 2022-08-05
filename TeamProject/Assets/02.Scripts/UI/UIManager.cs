@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject interItem;
     [SerializeField] Text txtInterName, txtInterKey, txtInterType;
 
+    ChatUICtrl chatUI;
+
     public static UIManager getInstance
     {
         get
@@ -50,6 +52,11 @@ public class UIManager : MonoBehaviour
             txtInterType = interItem.transform.GetChild(2).GetComponent<Text>();
 
             interItem.SetActive(false);
+        }
+        //Chat Dialog 초기화
+        {
+            chatUI = GameObject.Find("Chat Dialog").GetComponent<ChatUICtrl>();
+            ShowChatDialog(false);
         }
         //UpdateHealth(200, 100);
         //UpdateStamina(100, 80);
@@ -104,7 +111,7 @@ public class UIManager : MonoBehaviour
         //if (interItem.activeSelf == false)
         //    interItem.SetActive(true);
         txtInterName.text = name;
-        switch(type)
+        switch (type)
         {
             case InteractionType.INTERACTION:
                 txtInterType.text = "상호작용"; break;
@@ -116,5 +123,27 @@ public class UIManager : MonoBehaviour
                 txtInterType.text = "이동하기"; break;
         }
     }
-    
+
+    public void SetChatDialog(InteractionChat chat, int id, bool isNpc)
+    {
+        ShowChatDialog(true);
+        chatUI.Talk(chat, id, isNpc);
+    }
+
+    public void ReqestNextChat()
+    {
+        chatUI.ReqestNext();
+    }
+
+    public void ShowChatDialog(bool IsShow)
+    {
+        ShowInterItem(!IsShow);
+        chatUI.GetComponent<CanvasGroup>().alpha = IsShow ? 1 : 0;
+        chatUI.GetComponent<CanvasGroup>().blocksRaycasts = IsShow;
+    }
+    void ShowInterItem(bool IsShow)
+    {
+        interItem.GetComponent<CanvasGroup>().alpha = IsShow ? 1 : 0;
+    }
+
 }
