@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: -8300239885786632558}
   - component: {fileID: 1808222806016515803}
   m_Layer: 0
-  m_Name: brute
+  m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
