@@ -976,7 +976,6 @@ MonoBehaviour:
   Damage: 100
   animator: {fileID: 2910756267744047507}
   gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
-  HitEffect: {fileID: 0}
   audioClips: []
   audioSource: {fileID: 0}
 --- !u!114 &-2983129639145909936
