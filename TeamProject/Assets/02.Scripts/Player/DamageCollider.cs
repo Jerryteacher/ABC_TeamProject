@@ -8,6 +8,7 @@ namespace SG
     public class DamageCollider : MonoBehaviour
     {
         Collider damageCollider;
+       
         private void Awake()
         {
             damageCollider = GetComponent<Collider>();
@@ -22,5 +23,6 @@ namespace SG
         {
             damageCollider.enabled = false;
         }
+        
     }
 }
