@@ -13,10 +13,7 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     public GameDataObject gameData;
 
     
-    [SerializeField]
-    private AudioClip[] audioClips;
-    [SerializeField]
-    private AudioSource audioSource;
+    
     public float MaxHp 
     { 
         get
@@ -27,8 +24,7 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     private void Awake()
     {
         animator = GetComponent<Animator>();    
-        audioSource = GetComponent<AudioSource>();
-        audioClips = Resources.LoadAll<AudioClip>("HitSound");
+        
     }
     private void OnEnable()
     {
