@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
 
     ChatUICtrl chatUI;
 
+    public bool IsChatUIActive { get; protected set; }
+
     public static UIManager getInstance
     {
         get
@@ -137,6 +139,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowChatDialog(bool IsShow)
     {
+        IsChatUIActive = IsShow;
         ShowInterItem(!IsShow);
         chatUI.GetComponent<CanvasGroup>().alpha = IsShow ? 1 : 0;
         chatUI.GetComponent<CanvasGroup>().blocksRaycasts = IsShow;

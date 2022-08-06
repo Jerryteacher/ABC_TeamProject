@@ -10,6 +10,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
     List<string> detail = new List<string>();
     int idx = 0;
     bool triggerSkip = false;
+    bool MsgEnd = false;
 
     Image imgNPC;
     Text txtNpcName;
@@ -38,8 +39,8 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
     {
         this.chat = chat;
         int questTalkIndex = QuestManager.getInstance.GetQuestTalkIndex(id);
-        Debug.Log(id);
-        Debug.Log(questTalkIndex);
+        //Debug.Log(id);
+        //Debug.Log(questTalkIndex);
         idx = 0;
         detail.Clear();
         for (int i = 0; i < 100; i++)
@@ -54,7 +55,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
 
         QuestManager.getInstance.CheckQuest(id);
 
-        Debug.Log("CheckQuest Finish");
+        //Debug.Log("CheckQuest Finish");
         if (isNpc)
         {
             imgNPC.sprite = TalkManager.getInstance.GetPortrait(id, int.Parse(detail[0].Split(':')[1]));
@@ -100,7 +101,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
             if (triggerSkip)
             {
                 i = msg.Length;
-                triggerSkip = false;
+                //triggerSkip = false;
             }
             txtDetail.text = msg.Substring(0, i);
         }
@@ -126,6 +127,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
 
     public void ReqestNext()
     {
+        //Debug.Log("ReqestNext: " + idx);
         if (!triggerSkip)
             triggerSkip = true;
         else if (idx < detail.Count)
@@ -137,13 +139,13 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
 
     public void OnClickApply()
     {
-        Debug.Log("OnClickApply");
+        //Debug.Log("OnClickApply");
         //UIManager.getInstance.ShowChatDialog(true)
     }
 
     public void OnClickCancel()
     {
-        Debug.Log("OnClickCancel");
+        //Debug.Log("OnClickCancel");
         UIManager.getInstance.ShowChatDialog(false);
         chat.IsIntering = false;
     }

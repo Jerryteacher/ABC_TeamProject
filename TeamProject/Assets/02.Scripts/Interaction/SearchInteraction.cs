@@ -31,10 +31,12 @@ public class SearchInteraction : MonoBehaviour
         {
             if (interObj != null)
             {
-
                 interObj.GetComponent<IInteractionObject>().ActionInter();
             }
-
+            else if(UIManager.getInstance.IsChatUIActive)
+            {
+                UIManager.getInstance.ShowChatDialog(false);
+            }
 
 
         }
