@@ -10,10 +10,7 @@ namespace SG
         Collider damageCollider;
         [SerializeField]
         private GameObject HitEffect;
-        [SerializeField]
-        private AudioClip[] audioClips;
-        [SerializeField]
-        private AudioSource audioSource;
+        
         private void Awake()
         {
             damageCollider = GetComponent<Collider>();
@@ -21,7 +18,7 @@ namespace SG
             damageCollider.isTrigger = true;
             damageCollider.enabled = false;
             HitEffect = Resources.Load<GameObject>("Hits/Hit_01");
-            audioClips = Resources.LoadAll<AudioClip>("HitSound");
+            
         }
     
         public void EnableDamageCollider()
@@ -38,8 +35,7 @@ namespace SG
             {
                 
                 IDamageable _damage = other.GetComponent<IDamageable>();
-                other.GetComponent<Animator>().SetTrigger("Hit");
-                audioSource = other.GetComponent<AudioSource>();
+                other.GetComponent<Animator>().SetTrigger("Hit");              
                 StartCoroutine(Hit(damageCollider));
                 if (_damage != null)
                 {
@@ -58,7 +54,6 @@ namespace SG
             Vector3 pos = transform.position;
             Quaternion rot = transform.rotation;
             Instantiate(HitEffect, pos, rot);
-            audioSource.PlayOneShot(audioClips[Random.Range(0, audioClips.Length)], 0.5f);
         }
     }
 }

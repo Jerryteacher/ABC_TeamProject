@@ -11,9 +11,15 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     [SerializeField]
     private Animator animator;
     public GameDataObject gameData;
+    Collider  Enemycollider;
+    [SerializeField]
+    private AudioClip[] HitClips;
+    [SerializeField]
+    private AudioClip[] DieClips;
+    [SerializeField]
+    private AudioSource audioSource;
+    
 
-    
-    
     public float MaxHp 
     { 
         get
@@ -23,8 +29,11 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     }
     private void Awake()
     {
-        animator = GetComponent<Animator>();    
-        
+        animator = GetComponent<Animator>();
+        Enemycollider = GetComponent<Collider>();
+        audioSource = GetComponent<AudioSource>();
+        HitClips = Resources.LoadAll<AudioClip>("HitSound");
+        DieClips = Resources.LoadAll<AudioClip>("DieSound");
     }
     private void OnEnable()
     {
@@ -46,5 +55,14 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     {
         SaveGameData();
     }
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "WEAPON")
+        {
+            if (Hp > 0)
+                audioSource.PlayOneShot(HitClips[Random.Range(0, HitClips.Length)], 0.5f);
+            else
+                audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
+        }
+    }
 }
