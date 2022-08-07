@@ -35,6 +35,7 @@ GameObject:
   - component: {fileID: 8809523659169446691}
   - component: {fileID: 8809523659169446690}
   - component: {fileID: 8809523659169446689}
+  - component: {fileID: 8639724437863198428}
   m_Layer: 8
   m_Name: Player
   m_TagString: PLAYER
@@ -180,6 +181,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWeapon: {fileID: 11400000, guid: 1d61d70b1542c1f4d83f63a3ccf929c1, type: 2}
   leftWeapon: {fileID: 11400000, guid: 1d61d70b1542c1f4d83f63a3ccf929c1, type: 2}
+--- !u!114 &8639724437863198428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809523659169446697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d5dae9135606b40913505cfd14ab6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 3
+  EnemyHpChkradius: 10
 --- !u!1001 &8687105608466487018
 PrefabInstance:
   m_ObjectHideFlags: 0
