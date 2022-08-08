@@ -18,8 +18,7 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     private AudioClip[] DieClips;
     [SerializeField]
     private AudioSource audioSource;
-    
-
+    EnemyAI enemyAI;
     public float MaxHp 
     { 
         get
@@ -27,13 +26,17 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
             return maxHp;
         }
     }
+    [SerializeField]
+    private GameObject HitEffect;
     private void Awake()
     {
+        enemyAI = GetComponent<EnemyAI>();
         animator = GetComponent<Animator>();
         Enemycollider = GetComponent<Collider>();
         audioSource = GetComponent<AudioSource>();
         HitClips = Resources.LoadAll<AudioClip>("HitSound");
         DieClips = Resources.LoadAll<AudioClip>("DieSound");
+        HitEffect = Resources.Load<GameObject>("Hits/Hit_01");
     }
     private void OnEnable()
     {
@@ -42,9 +45,18 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     public void OnDamaged(float dmg)
     {
         float _hp = Hp;
-        //계산
         _hp -= dmg;
         SetHp(_hp);
+        if (Hp <= 0)
+        {
+            enemyAI.state = EnemyAI.State.DIE;
+        }
+        else
+        {
+            animator.SetTrigger("Hit");
+            StartCoroutine(Hit());
+        }
+        
     }
     public void SetHp(float hp) => Hp = Mathf.Clamp(hp, 0, maxHp);
     void SaveGameData()
@@ -68,5 +80,13 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
                 audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
             }
         }
+    }
+    IEnumerator Hit()
+    {
+        Debug.Log("이펙트");
+        yield return new WaitForSeconds(0.01f);
+        Vector3 pos = transform.position;
+        Quaternion rot = transform.rotation;
+        Instantiate(HitEffect, pos, rot);
     }
 }

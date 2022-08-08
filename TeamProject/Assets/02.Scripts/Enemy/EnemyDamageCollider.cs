@@ -8,16 +8,21 @@ public class EnemyDamageCollider : MonoBehaviour
     [SerializeField]
     private GameObject HitEffect;
     public int currentWeaponDamage = 25;
-
+    public GameObject Enemy;
+    private EnemyAttack enemyAttack;
     private void Awake()
     {
         damageCollider = GetComponent<Collider>();
         damageCollider.gameObject.SetActive(true);
         damageCollider.isTrigger = true;
         damageCollider.enabled = false;
+        enemyAttack = Enemy.GetComponent<EnemyAttack>();
         HitEffect = Resources.Load<GameObject>("Hits/Hit_02");
     }
-
+    private void Update()
+    {
+            
+    }
     public void EnableDamageCollider()
     {
         damageCollider.enabled = true;
@@ -42,6 +47,7 @@ public class EnemyDamageCollider : MonoBehaviour
             }
         }
     }
+    
     IEnumerator Hit(Collider other)
     {
         Debug.Log("이펙트");

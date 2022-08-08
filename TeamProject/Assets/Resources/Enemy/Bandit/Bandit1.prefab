@@ -28,6 +28,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitEffect: {fileID: 0}
   currentWeaponDamage: 25
+  Enemy: {fileID: 2969872060761616475}
 --- !u!1 &2969872056360279701
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2972eb731c17f4a916b3711c760b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDamageCollider: {fileID: 0}
   isAttack: 0
 --- !u!114 &7751352059668865840
 MonoBehaviour:

@@ -33,13 +33,21 @@ public class EnemyAttack : MonoBehaviour
         {        
             if (Time.time>= nextAttack)
             {
-                enemyDamageCollider.EnableDamageCollider();
+                StartCoroutine(ColliderSet());
                 animator.SetTrigger(hashAttack);
                 nextAttack = Time.time + AttackRate + Random.Range(3f,4f);
-                enemyDamageCollider.DisableDamageCollider();
             }
             Quaternion rot = Quaternion.LookRotation(playerTr.position - tr.position);
             tr.rotation = Quaternion.Slerp(tr.rotation, rot, Time.deltaTime * damping);
         }
+    }
+    IEnumerator ColliderSet()
+    {
+        Debug.Log("켜짐");
+        enemyDamageCollider.EnableDamageCollider();
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        enemyDamageCollider.DisableDamageCollider();
+        Debug.Log("꺼짐");
+        yield return new WaitForSeconds(0.01f);
     }
 }
