@@ -34,12 +34,14 @@ namespace SG
         {
             if (other.tag == "Enemy")
             {
+                //임시 확인용////////////////////////////////////////////////
                 EnemyStats enemyStats = other.GetComponent<EnemyStats>();
 
                 if (enemyStats != null)
                 {
                     enemyStats.TakeDamage(currentWeaponDamage);
                 }
+                /////////////////////////////////////////////////////////////
 
 
                 IDamageable _damage = other.GetComponent<IDamageable>();
