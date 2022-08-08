@@ -45,7 +45,7 @@ public class EnemyAttack : MonoBehaviour
     {
         Debug.Log("켜짐");
         enemyDamageCollider.EnableDamageCollider();
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length*0.7f);
         enemyDamageCollider.DisableDamageCollider();
         Debug.Log("꺼짐");
         yield return new WaitForSeconds(0.01f);

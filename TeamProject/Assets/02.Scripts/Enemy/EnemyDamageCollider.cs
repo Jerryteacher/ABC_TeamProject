@@ -21,7 +21,7 @@ public class EnemyDamageCollider : MonoBehaviour
     }
     private void Update()
     {
-            
+
     }
     public void EnableDamageCollider()
     {
@@ -41,6 +41,7 @@ public class EnemyDamageCollider : MonoBehaviour
             {
                 _damage.OnDamaged(currentWeaponDamage);
                 Debug.Log(other.name);
+                Debug.Log(-currentWeaponDamage);
             }
             else
             {
@@ -48,7 +49,6 @@ public class EnemyDamageCollider : MonoBehaviour
             }
         }
     }
-    
     IEnumerator Hit(Collider other)
     {
         Debug.Log("이펙트");
