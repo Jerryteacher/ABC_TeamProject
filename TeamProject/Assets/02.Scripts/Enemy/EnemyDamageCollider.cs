@@ -39,6 +39,7 @@ public class EnemyDamageCollider : MonoBehaviour
             StartCoroutine(Hit(damageCollider));
             if (_damage != null)
             {
+                _damage.OnDamaged(currentWeaponDamage);
                 Debug.Log(other.name);
             }
             else

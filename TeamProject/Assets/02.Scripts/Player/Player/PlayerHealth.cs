@@ -12,13 +12,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     void Start()
     {
         maxHp = 100;
-    }
-
-    private void OnEnable()
-    {
-        //curHp = maxHp;
         SetHp(maxHp);
     }
+
 
     // Update is called once per frame
     void Update()

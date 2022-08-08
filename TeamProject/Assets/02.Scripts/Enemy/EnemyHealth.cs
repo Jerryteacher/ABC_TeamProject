@@ -46,6 +46,7 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     {
         float _hp = Hp;
         _hp -= dmg;
+        GetComponent<EnemyHpbar>().ShowDamage(dmg);
         SetHp(_hp);
         if (Hp <= 0)
         {

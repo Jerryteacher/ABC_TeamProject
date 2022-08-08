@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         //Hp, Sp, Exp 초기화
         {
@@ -55,6 +55,10 @@ public class UIManager : MonoBehaviour
 
             interItem.SetActive(false);
         }
+    }
+    void Start()
+    {
+        
         //Chat Dialog 초기화
         {
             chatUI = GameObject.Find("Chat Dialog").GetComponent<ChatUICtrl>();

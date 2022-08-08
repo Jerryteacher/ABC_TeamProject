@@ -28,8 +28,8 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
     void Start()
     {
         imgNPC = transform.GetChild(0).GetComponent<Image>();
-        txtNpcName = transform.GetChild(1).GetComponent<Text>();
-        txtDetail = transform.GetChild(2).GetComponent<Text>();
+        txtNpcName = transform.GetChild(1).GetChild(0).GetComponent<Text>();
+        txtDetail = transform.GetChild(2).GetChild(0).GetComponent<Text>();
         //btnNext = transform.GetChild(3).GetComponent<Button>();
         //btnApply = transform.GetChild(3).GetComponent<Button>();
         //btnCancel = transform.GetChild(4).GetComponent<Button>();
@@ -37,6 +37,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
 
     public void Talk(InteractionChat chat, int id, bool isNpc)
     {
+        chatID = id;
         this.chat = chat;
         int questTalkIndex = QuestManager.getInstance.GetQuestTalkIndex(id);
         //Debug.Log(id);
@@ -105,6 +106,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
             }
             txtDetail.text = msg.Substring(0, i);
         }
+        triggerSkip = true;
         //if (idx < detail.Count)
         //     btnNext.gameObject.SetActive(true);
         //else
@@ -146,6 +148,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
     public void OnClickCancel()
     {
         //Debug.Log("OnClickCancel");
+        //QuestManager.getInstance.CheckQuest(chatID);
         UIManager.getInstance.ShowChatDialog(false);
         chat.IsIntering = false;
     }

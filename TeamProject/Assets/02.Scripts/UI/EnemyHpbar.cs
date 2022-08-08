@@ -41,6 +41,8 @@ public class EnemyHpbar : MonoBehaviour
     
     void Start()
     {
+        txtDmgOffset = Offset + new Vector3(0, 0.1f, 0);
+
         rectParent = GameObject.Find("MainUICanvas").transform.GetChild(0).GetComponent<RectTransform>();
 
         HpbarPrefab = Resources.Load<GameObject>("Prefab/UI/EnemyHpbar");
