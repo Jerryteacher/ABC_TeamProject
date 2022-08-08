@@ -126,6 +126,7 @@ Transform:
   - {fileID: 6090165964614405680}
   - {fileID: 2337759703943628686}
   - {fileID: 504822016428657424}
+  - {fileID: 6886280934450370084}
   m_Father: {fileID: 3162461116097141961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -591,8 +592,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668013515008094610}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0005275395, y: 0.000000047627168, z: -2.5120794e-11, w: 0.9999999}
+  m_LocalPosition: {x: -0.86201763, y: -1.7397493, z: 0.10669944}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5987611862061005756}
@@ -604,8 +605,8 @@ Transform:
   - {fileID: 1602089562650075567}
   - {fileID: 4940984831912889876}
   - {fileID: 3362187185876942250}
-  m_Father: {fileID: 1483030818089456825}
-  m_RootOrder: 1
+  m_Father: {fileID: 8481010386415082815}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764591346865803825
 GameObject:
@@ -1109,7 +1110,6 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 1507625084503036848}
-  - {fileID: 6886280934450370084}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1199,11 +1199,10 @@ MonoBehaviour:
   Hp: 0
   maxHp: 0
   initHp: 100
-  Damage: 30
   animator: {fileID: 0}
   gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
-  HitEffect: {fileID: 0}
-  audioClips: []
+  HitClips: []
+  DieClips: []
   audioSource: {fileID: 0}
 --- !u!114 &919132147826897825
 MonoBehaviour:
@@ -1231,6 +1230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2972eb731c17f4a916b3711c760b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDamageCollider: {fileID: 5895852746592766853}
   isAttack: 0
 --- !u!114 &919132147826897828
 MonoBehaviour:
@@ -1263,6 +1263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 2.4, z: 0}
   HpbarPrefab: {fileID: 0}
+  DamageTextPrefab: {fileID: 0}
   rectParent: {fileID: 0}
 --- !u!82 &1808222806016515803
 AudioSource:
@@ -1835,6 +1836,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5987611862061005756}
   - component: {fileID: 5021067676930063909}
+  - component: {fileID: 3132411078109769938}
+  - component: {fileID: 5895852746592766853}
   m_Layer: 0
   m_Name: BattleAxe_GEO
   m_TagString: Untagged
@@ -1850,7 +1853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4393160177117028094}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6886280934450370084}
@@ -1924,6 +1927,33 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.6045573, y: -0.07354333, z: 0.32172823}
     m_Extent: {x: 0.3680054, y: 0.0861812, z: 0.73800075}
   m_DirtyAABB: 0
+--- !u!65 &3132411078109769938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393160177117028094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7360158, y: 0.17236258, z: 0.6}
+  m_Center: {x: 1.1751645, y: 1.6663172, z: 0.21686274}
+--- !u!114 &5895852746592766853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4393160177117028094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc9b0b6ea9fe6548a78b0542f018e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitEffect: {fileID: 0}
+  currentWeaponDamage: 25
 --- !u!1 &4438162967624453506
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,12 +12,14 @@ public class EnemyAttack : MonoBehaviour
     private readonly int hashAttackIdx = Animator.StringToHash("AttackIdx");
     private float nextAttack = 0f;
     private float AttackRate = 0.1f;
-
+    [SerializeField]
+    private EnemyDamageCollider enemyDamageCollider;
     private readonly float damping = 10f;
     EnemyAI enemyAI;
     public bool isAttack = false;
     void Start()
     {
+        enemyDamageCollider = GetComponentInChildren<EnemyDamageCollider>();
         enemyAI = GetComponent<EnemyAI>();
         animator = GetComponent<Animator>();
         playerTr = GameObject.FindGameObjectWithTag("PLAYER").transform;
@@ -31,8 +33,10 @@ public class EnemyAttack : MonoBehaviour
         {        
             if (Time.time>= nextAttack)
             {
+                enemyDamageCollider.EnableDamageCollider();
                 animator.SetTrigger(hashAttack);
                 nextAttack = Time.time + AttackRate + Random.Range(3f,4f);
+                enemyDamageCollider.DisableDamageCollider();
             }
             Quaternion rot = Quaternion.LookRotation(playerTr.position - tr.position);
             tr.rotation = Quaternion.Slerp(tr.rotation, rot, Time.deltaTime * damping);
