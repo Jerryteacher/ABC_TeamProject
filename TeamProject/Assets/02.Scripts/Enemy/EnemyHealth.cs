@@ -60,9 +60,13 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
         if (other.tag == "WEAPON")
         {
             if (Hp > 0)
+            {
                 audioSource.PlayOneShot(HitClips[Random.Range(0, HitClips.Length)], 0.5f);
+            }
             else
+            {
                 audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
+            }
         }
     }
 }
