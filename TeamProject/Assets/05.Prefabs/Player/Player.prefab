@@ -190,6 +190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9baf23a7b1fa843a37db2622093c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 0
+  curHp: 0
 --- !u!82 &8765718873619675607
 AudioSource:
   m_ObjectHideFlags: 0
@@ -773,6 +775,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 281371385560738172}
     m_Modifications:
+    - target: {fileID: 8924291101273323393, guid: 775598160aded6548a864bca9c008f63,
+        type: 3}
+      propertyPath: m_Radius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8924291101273323418, guid: 775598160aded6548a864bca9c008f63,
         type: 3}
       propertyPath: m_Name

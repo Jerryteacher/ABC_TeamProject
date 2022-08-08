@@ -36,18 +36,18 @@ public class BGMController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Field")
         {
-            if (EnemyCount > 0&& BattleSource.isPlaying==false)
+            if (EnemyCount > 0 && BattleSource.isPlaying == false)
             {
                 audioSource.Stop();
                 BattleSource.PlayOneShot(BGMClips[0]);
             }
-            else if(EnemyCount == 0 && audioSource.isPlaying == false)
+            else if (EnemyCount == 0 && audioSource.isPlaying == false)
             {
                 BattleSource.Stop();
                 audioSource.PlayOneShot(BGMClips[1]);
             }
         }
-        else if(SceneManager.GetActiveScene().name == "Village")
+        else if (SceneManager.GetActiveScene().name == "Village" && audioSource.isPlaying == false)
         {
             audioSource.PlayOneShot(BGMClips[2]);
         }
