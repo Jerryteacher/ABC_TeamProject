@@ -50,6 +50,7 @@ namespace SG
                 if (_damage != null)
                 {
                     Debug.Log(other.name);
+                    _damage.OnDamaged(currentWeaponDamage);
                 }
                 else
                 {
