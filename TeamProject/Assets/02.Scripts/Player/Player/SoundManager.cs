@@ -28,12 +28,6 @@ namespace SG
 
         private void Step()
         {
-            if (inputHandler.rollFlag)
-                return;
-
-            if (playerManager.isInteracting)
-                return;
-
             AudioClip clip = RandomFootClip();
             audioSource.PlayOneShot(clip);
         }
