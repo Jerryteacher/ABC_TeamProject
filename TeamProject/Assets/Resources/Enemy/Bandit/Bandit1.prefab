@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!136 &322222325343408388
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067024677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.08
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &2969872056360279701
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,10 +987,10 @@ MonoBehaviour:
   Hp: 0
   maxHp: 0
   initHp: 100
-  Damage: 100
   animator: {fileID: 2910756267744047507}
   gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
-  audioClips: []
+  HitClips: []
+  DieClips: []
   audioSource: {fileID: 0}
 --- !u!114 &-2983129639145909936
 MonoBehaviour:
@@ -992,6 +1006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Offset: {x: 0, y: 2.1, z: 0}
   HpbarPrefab: {fileID: 0}
+  DamageTextPrefab: {fileID: 0}
   rectParent: {fileID: 0}
 --- !u!82 &401661576310419125
 AudioSource:
@@ -3066,6 +3081,12 @@ PrefabInstance:
 --- !u!4 &1067326725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 16e32a35adb80834e9391fb4bfe5d30e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1066928005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1067024677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 16e32a35adb80834e9391fb4bfe5d30e,
     type: 3}
   m_PrefabInstance: {fileID: 1066928005}
   m_PrefabAsset: {fileID: 0}

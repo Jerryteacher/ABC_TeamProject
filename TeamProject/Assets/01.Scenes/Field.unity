@@ -2701,7 +2701,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 159196, guid: 37e803394624a5c48ae5f13fd212ac0b, type: 3}
       propertyPath: m_Name
-      value: magic_ring_01
+      value: Portal
       objectReference: {fileID: 0}
     - target: {fileID: 428174, guid: 37e803394624a5c48ae5f13fd212ac0b, type: 3}
       propertyPath: m_RootOrder

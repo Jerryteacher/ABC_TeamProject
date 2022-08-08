@@ -47,7 +47,7 @@ public class BGMController : MonoBehaviour
                 audioSource.PlayOneShot(BGMClips[1]);
             }
         }
-        else if(SceneManager.GetActiveScene().name == "Village")
+        else if(SceneManager.GetActiveScene().name == "Village" && audioSource.isPlaying == false)
         {
             audioSource.PlayOneShot(BGMClips[2]);
         }
