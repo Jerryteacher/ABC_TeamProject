@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -121,6 +121,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &71495983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7178426989170446956, guid: fe738290b9d7c1748a671f1879fff47b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8268757526939859167}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &71495988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71495983}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d78de6a1c00932144819884d5331c035, type: 3}
+  m_Controller: {fileID: 9100000, guid: e279d3737472f4a41ab8b3027888140f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &107049817
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +974,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7554003310007847126, guid: fe738290b9d7c1748a671f1879fff47b,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554003310007847126, guid: fe738290b9d7c1748a671f1879fff47b,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.089
       objectReference: {fileID: 0}
@@ -1065,6 +1095,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809523659169446702, guid: 2f800cc23ce9a8e4b9c8c81b0366a1ba,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.483487
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809523659169446702, guid: 2f800cc23ce9a8e4b9c8c81b0366a1ba,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 1.0582548
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f800cc23ce9a8e4b9c8c81b0366a1ba, type: 3}

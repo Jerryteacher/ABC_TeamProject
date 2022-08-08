@@ -10,7 +10,8 @@ namespace SG
         Collider damageCollider;
         [SerializeField]
         private GameObject HitEffect;
-        
+        public int currentWeaponDamage = 25;
+
         private void Awake()
         {
             damageCollider = GetComponent<Collider>();
@@ -33,7 +34,14 @@ namespace SG
         {
             if (other.tag == "Enemy")
             {
-                
+                EnemyStats enemyStats = other.GetComponent<EnemyStats>();
+
+                if (enemyStats != null)
+                {
+                    enemyStats.TakeDamage(currentWeaponDamage);
+                }
+
+
                 IDamageable _damage = other.GetComponent<IDamageable>();
                 other.GetComponent<Animator>().SetTrigger("Hit");              
                 StartCoroutine(Hit(damageCollider));
