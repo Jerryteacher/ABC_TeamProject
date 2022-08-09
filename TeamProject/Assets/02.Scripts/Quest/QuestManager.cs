@@ -33,6 +33,7 @@ public class QuestManager : MonoBehaviour
         questList.Add(10, new QuestData("첫 마을 방문.","대화를 한다 ", new int[] { 1000, 3000 })); //Add(quest Id, data)
         questList.Add(20, new QuestData("잃어버린 망치찾기.", "스미스가 잃어버린 망치를 찾아준다. ", new int[] { 5000, 3000 })); //Add(quest Id, data)
         questList.Add(30, new QuestData("퀘스트 클리어.","", new int[] {0 }));
+        //questList.Add(40, new QuestData(".", "", new int[] { 0 }));
 
     }
 

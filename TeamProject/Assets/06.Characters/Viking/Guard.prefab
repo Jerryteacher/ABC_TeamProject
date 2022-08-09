@@ -426,6 +426,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7220069132637117301}
   - component: {fileID: 7220069132628128919}
+  - component: {fileID: 8728635366699956227}
+  - component: {fileID: 260889164006004715}
+  - component: {fileID: 4885626480834951226}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Untagged
@@ -472,6 +475,46 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8728635366699956227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220069132637472597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e102f4380b509124a886d9cf666c25bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 100
+  isNpc: 0
+--- !u!114 &260889164006004715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220069132637472597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5512ce252576fc48b9e1fed58b035cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &4885626480834951226
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220069132637472597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7220069132637472599
 GameObject:
   m_ObjectHideFlags: 0
