@@ -35,7 +35,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
         //btnCancel = transform.GetChild(4).GetComponent<Button>();
     }
 
-    public void Talk(InteractionChat chat, int id, bool isNpc)
+    public void Talk(InteractionChat chat, string name, int id, bool isNpc)
     {
         chatID = id;
         this.chat = chat;
@@ -54,9 +54,10 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
 
         }
 
-        QuestManager.getInstance.CheckQuest(id);
+        //QuestManager.getInstance.CheckQuest(id);
 
         //Debug.Log("CheckQuest Finish");
+        txtNpcName.text = name;
         if (isNpc)
         {
             imgNPC.sprite = TalkManager.getInstance.GetPortrait(id, int.Parse(detail[0].Split(':')[1]));
@@ -136,13 +137,15 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
         {
             OnClickNext();
         }
-        else OnClickCancel();
+        else OnClickApply();
     }
 
     public void OnClickApply()
     {
         //Debug.Log("OnClickApply");
-        //UIManager.getInstance.ShowChatDialog(true)
+        QuestManager.getInstance.CheckQuest(chatID);
+        UIManager.getInstance.ShowChatDialog(false);
+        chat.IsIntering = false;
     }
 
     public void OnClickCancel()

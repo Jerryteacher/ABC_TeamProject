@@ -16,7 +16,7 @@ public class InteractionChat : MonoBehaviour, IInteractionObject
         if (!IsIntering)
         {
             ObjData objData = GetComponent<ObjData>();
-            UIManager.getInstance.SetChatDialog(this, objData.id, objData.isNpc);
+            UIManager.getInstance.SetChatDialog(this, gameObject.name, objData.id, objData.isNpc);
             IsIntering = true;
         }
         else

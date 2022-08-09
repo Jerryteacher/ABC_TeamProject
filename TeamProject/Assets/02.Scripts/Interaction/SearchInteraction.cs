@@ -8,6 +8,8 @@ public class SearchInteraction : MonoBehaviour
     [SerializeField] float radius = 3f;
     [SerializeField] float EnemyHpChkradius = 3f;
     bool IsSearching = false;
+    public bool SearchingPause { get; set; }
+    
     bool hasInteraction = false;
 
 
@@ -31,12 +33,13 @@ public class SearchInteraction : MonoBehaviour
         {
             if (interObj != null)
             {
+                //searchingPause = true;
                 interObj.GetComponent<IInteractionObject>().ActionInter();
             }
-            else if(UIManager.getInstance.IsChatUIActive)
-            {
-                UIManager.getInstance.ShowChatDialog(false);
-            }
+            //else if(UIManager.getInstance.IsChatUIActive)
+            //{
+            //    UIManager.getInstance.ShowChatDialog(false);
+            //}
 
 
         }
@@ -52,13 +55,14 @@ public class SearchInteraction : MonoBehaviour
          * }
          */
     }
-
+    //public void ResetPause() => searchingPause = false;
     IEnumerator CheckInteractionObject()
     {
         //초기화 딜레이
         yield return new WaitForSeconds(0.1f);
         while (IsSearching)
         {
+            if (!SearchingPause) 
             {
                 Collider[] cols = Physics.OverlapSphere(transform.position, radius);
                 IInteractionObject _obj = null;
@@ -102,6 +106,7 @@ public class SearchInteraction : MonoBehaviour
                     interObj = null;
                 }
             }
+            //감지 범위 내 적 탐색 후 Hp표시
             {
                 Collider[] cols = Physics.OverlapSphere(transform.position, EnemyHpChkradius + 2);
                 foreach (Collider col in cols)

@@ -17,9 +17,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject interItem;
     [SerializeField] Text txtInterName, txtInterKey, txtInterType;
 
-    ChatUICtrl chatUI;
 
-    public bool IsChatUIActive { get; protected set; }
+    SearchInteraction playerInter;
+    ChatUICtrl chatUI;
+    
+
+    //public bool IsChatUIActive { get; protected set; }
+
+
+    readonly string playerTag = "PLAYER";
 
     public static UIManager getInstance
     {
@@ -28,6 +34,15 @@ public class UIManager : MonoBehaviour
             if (instance == null)
                 instance = (UIManager)FindObjectOfType(typeof(UIManager));
             return instance;
+        }
+    }
+    SearchInteraction PlayerInter
+    {
+        get
+        {
+            if (playerInter == null)
+                playerInter = GameObject.FindWithTag(playerTag).GetComponent<SearchInteraction>();
+            return playerInter;
         }
     }
 
@@ -56,6 +71,8 @@ public class UIManager : MonoBehaviour
             interItem.SetActive(false);
         }
     }
+
+
     void Start()
     {
         
@@ -130,10 +147,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void SetChatDialog(InteractionChat chat, int id, bool isNpc)
+    public void SetChatDialog(InteractionChat chat, string name, int id, bool isNpc)
     {
         ShowChatDialog(true);
-        chatUI.Talk(chat, id, isNpc);
+        chatUI.Talk(chat, name, id, isNpc);
     }
 
     public void ReqestNextChat()
@@ -143,7 +160,9 @@ public class UIManager : MonoBehaviour
 
     public void ShowChatDialog(bool IsShow)
     {
-        IsChatUIActive = IsShow;
+        if(PlayerInter!=null)
+            PlayerInter.SearchingPause = IsShow;
+        //IsChatUIActive = IsShow;
         ShowInterItem(!IsShow);
         chatUI.GetComponent<CanvasGroup>().alpha = IsShow ? 1 : 0;
         chatUI.GetComponent<CanvasGroup>().blocksRaycasts = IsShow;
