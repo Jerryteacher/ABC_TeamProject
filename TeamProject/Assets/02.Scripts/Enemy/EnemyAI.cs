@@ -32,7 +32,8 @@ public class EnemyAI : MonoBehaviour
     private EnemyFOV enemyFov;
     private EnemyAttack enemyAttack;
     private EnemyHealth enemyHealth;
-
+    [SerializeField]
+    private BGMController bgmcontroller;
     private readonly int hashIdx = Animator.StringToHash("Idx");
     private readonly int hashDieIdx = Animator.StringToHash("DieIdx");
     private readonly int hashDie= Animator.StringToHash("Die");
@@ -52,6 +53,7 @@ public class EnemyAI : MonoBehaviour
         enemyFov = GetComponent<EnemyFOV>();
         enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
+        bgmcontroller = GameObject.FindGameObjectWithTag("PLAYER").GetComponentInChildren<BGMController>();
         ws = new WaitForSeconds(0.3f);
     }
     private void OnEnable()
@@ -119,6 +121,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void Die()
     {
+        bgmcontroller.EnemyCount--;
         this.gameObject.tag = "Untagged";
         isDie = true;
         moveagent.Stop();

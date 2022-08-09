@@ -2491,6 +2491,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 390430722}
     m_Modifications:
+    - target: {fileID: 402002243156215009, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002243156215009, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002243760447575, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002243760447575, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002243837881701, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002243837881701, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002244048956213, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002244048956213, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002244048956213, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002245011545437, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002245011545437, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.y
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 402002245011545437, guid: e12591a22aaa55f4aad8549d06f7f760,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 402002245070495933, guid: e12591a22aaa55f4aad8549d06f7f760,
         type: 3}
       propertyPath: m_Name
