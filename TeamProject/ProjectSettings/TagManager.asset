@@ -9,6 +9,7 @@ TagManager:
   - Stage
   - PLAYER
   - WEAPON
+  - E_WEAPON
   layers:
   - Default
   - TransparentFX

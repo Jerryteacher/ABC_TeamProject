@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2972eb731c17f4a916b3711c760b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDamageCollider: {fileID: 0}
   isAttack: 0
 --- !u!114 &-7150202470590139922
 MonoBehaviour:
@@ -414,6 +415,7 @@ MonoBehaviour:
   HitClips: []
   DieClips: []
   audioSource: {fileID: 0}
+  HitEffect: {fileID: 0}
 --- !u!114 &3326408847280115910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3016,7 +3018,7 @@ GameObject:
   - component: {fileID: 5193496401484077761}
   m_Layer: 0
   m_Name: HitPoint
-  m_TagString: Untagged
+  m_TagString: E_WEAPON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

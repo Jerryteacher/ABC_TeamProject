@@ -986,6 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2972eb731c17f4a916b3711c760b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyDamageCollider: {fileID: 0}
   isAttack: 0
 --- !u!114 &7751352059668865840
 MonoBehaviour:
@@ -1007,6 +1008,7 @@ MonoBehaviour:
   HitClips: []
   DieClips: []
   audioSource: {fileID: 0}
+  HitEffect: {fileID: 0}
 --- !u!114 &-2983129639145909936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3046,6 +3048,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 16e32a35adb80834e9391fb4bfe5d30e, type: 3}
       propertyPath: m_Name
       value: Sword14
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 16e32a35adb80834e9391fb4bfe5d30e, type: 3}
+      propertyPath: m_TagString
+      value: E_WEAPON
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 16e32a35adb80834e9391fb4bfe5d30e, type: 3}
       propertyPath: m_RootOrder

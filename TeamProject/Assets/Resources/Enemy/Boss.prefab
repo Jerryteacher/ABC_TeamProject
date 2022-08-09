@@ -1204,6 +1204,7 @@ MonoBehaviour:
   HitClips: []
   DieClips: []
   audioSource: {fileID: 0}
+  HitEffect: {fileID: 0}
 --- !u!114 &919132147826897825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1840,7 +1841,7 @@ GameObject:
   - component: {fileID: 5895852746592766853}
   m_Layer: 0
   m_Name: BattleAxe_GEO
-  m_TagString: Untagged
+  m_TagString: E_WEAPON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
