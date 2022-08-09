@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         //UI
         DontDestroyOnLoad(UIManager.getInstance.gameObject);
         DontDestroyOnLoad(FindObjectOfType<EventSystem>());
+        DontDestroyOnLoad(FindObjectOfType<MinimapCam>());
     }
     public void incKillCount()
     {
