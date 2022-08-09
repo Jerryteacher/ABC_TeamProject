@@ -40,7 +40,7 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     }
     private void OnEnable()
     {
-        maxHp = Hp = initHp + (gameData.KillCount * 10);
+        maxHp = Hp = gameData.EnemyLevel*50+150;
     }
     public void OnDamaged(float dmg)
     {

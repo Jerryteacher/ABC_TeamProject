@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d7c7b615c1e9840866741ece373a5f, type: 3}
   m_Name: GameDataSO
   m_EditorClassIdentifier: 
-  KillCount: 1
+  EnemyLevel: 5
+  KillCount: 13
   EnemyHp: 100
   Damage: 25

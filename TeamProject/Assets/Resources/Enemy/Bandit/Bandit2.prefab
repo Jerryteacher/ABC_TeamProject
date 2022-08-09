@@ -378,9 +378,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   Type: 0
-  traceDist: 10
+  traceDist: 15
   attackDist: 2.5
   isDie: 0
+  bgmcontroller: {fileID: 0}
 --- !u!114 &190499957835489604
 MonoBehaviour:
   m_ObjectHideFlags: 0
