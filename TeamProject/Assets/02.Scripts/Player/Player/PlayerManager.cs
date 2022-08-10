@@ -15,8 +15,8 @@ public class PlayerManager : MonoBehaviour
     public bool isInteracting;
 
 
-    Slider expSlider;
-    public Text levelText;
+    //Slider expSlider;
+    //public Text levelText;
 
     public PlayerStats playerStats;
     public GameObject QuestComponentSave;
@@ -49,10 +49,12 @@ public class PlayerManager : MonoBehaviour
 
         cameraHandler = FindObjectOfType<CameraHandler>();
 
+        playerStats = new PlayerStats();
+
         playerStats.nickname = "이안";
         playerStats.currExp = 0;
-        expSlider.maxValue = playerStats.exp;
-        expSlider.value = 0;
+        //expSlider.maxValue = playerStats.exp;
+        //expSlider.value = 0;
 
         playerStats.Level = 1;
     }
@@ -128,8 +130,8 @@ public class PlayerManager : MonoBehaviour
     {
         playerStats.Level += 1;
 
-        levelText.text = "Lv " + playerStats.Level;
-        expSlider.maxValue = playerStats.exp;
+        //levelText.text = "Lv " + playerStats.Level;
+        //expSlider.maxValue = playerStats.exp;
 
         if (LevelUpevent != null)
         {

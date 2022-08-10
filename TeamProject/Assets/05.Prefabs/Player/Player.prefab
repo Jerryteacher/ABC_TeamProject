@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 281371385560738171}
   - component: {fileID: 281371385560738168}
   - component: {fileID: 281371385560738169}
-  - component: {fileID: 281371385560738167}
   - component: {fileID: 281371385560738166}
   - component: {fileID: 281371385560738165}
   - component: {fileID: 1026927671728667784}
@@ -120,23 +119,6 @@ MonoBehaviour:
   sprintSpeed: 7
   rotationSpeed: 10
   fallingSpeed: 100
---- !u!114 &281371385560738167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281371385560738173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 708c26e5e47c93d41b9012230e1aee64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInteracting: 0
-  isSprinting: 0
-  isInAir: 0
-  isGrounded: 0
-  canDoCombo: 0
 --- !u!114 &281371385560738166
 MonoBehaviour:
   m_ObjectHideFlags: 0
