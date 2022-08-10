@@ -31,23 +31,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         //죽음 판정
-        animatorHandler.PlayTargetAnimation("Player_Hit", true);
+        //animatorHandler.PlayTargetAnimation("Player_Hit", true);
 
         if(curHp <= 0)
         {
-            curHp = 0;
-            animatorHandler.PlayTargetAnimation("Player_Death", true);
-            this.gameObject.tag = "Untagged";
-            this.gameObject.layer = 0;
-            GetComponent<CapsuleCollider>().enabled = false;
-            GetComponent<Rigidbody>().isKinematic = true;
+            Die();
+            //Time.timeScale = 0;
             
         }
-
         
-        //죽음판정 끝
-
-
         //hit, death 사운드
         if (curHp > 0)
         {
@@ -57,6 +49,16 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
         }
+    }
+
+    void Die()
+    {
+        curHp = 0;
+        animatorHandler.PlayTargetAnimation("Player_Death", true);
+        this.gameObject.tag = "Untagged";
+        this.gameObject.layer = 0;
+        GetComponent<CapsuleCollider>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     public void OnDamaged(float dmg)
