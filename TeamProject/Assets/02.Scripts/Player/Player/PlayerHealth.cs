@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private AudioClip[] DieClips;
     [SerializeField] private AudioSource audioSource;
 
+    public float nextHit = 2.0f;
+
     AnimatorHandler animatorHandler;
 
     void Awake()
@@ -31,26 +33,25 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         //죽음 판정
-        //animatorHandler.PlayTargetAnimation("Player_Hit", true);
-
-        if(curHp <= 0)
+        if (Time.time >= nextHit)
         {
-            Die();
-            //Time.timeScale = 0;
-            
-        }
-        
-        //hit, death 사운드
-        if (curHp > 0)
-        {
-            audioSource.PlayOneShot(HitClips[Random.Range(0, HitClips.Length)], 0.5f);
-        }
-        else
-        {
-            audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
+            if (curHp <= 0)
+            {
+                Die();
+                //Time.timeScale = 0;           
+            }
+            //hit, death 사운드
+            if (curHp > 0)
+            {
+                animatorHandler.PlayTargetAnimation("Player_Hit", true);
+                audioSource.PlayOneShot(HitClips[Random.Range(0, HitClips.Length)], 0.5f);
+            }
+            else
+            {
+                audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
+            }
         }
     }
-
     void Die()
     {
         curHp = 0;
@@ -68,7 +69,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         _hp -= dmg;
         SetHp(_hp);
     }
-
     void SetHp(float hp)
     {
         curHp = Mathf.Clamp(hp, 0, maxHp);

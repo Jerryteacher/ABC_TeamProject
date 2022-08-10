@@ -10,6 +10,8 @@ TagManager:
   - PLAYER
   - WEAPON
   - E_WEAPON
+  - BOSS
+  - BGM
   layers:
   - Default
   - TransparentFX

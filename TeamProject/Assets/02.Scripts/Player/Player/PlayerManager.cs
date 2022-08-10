@@ -9,7 +9,7 @@ using UnityEngine;
         Animator anim;
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
-
+        public static PlayerManager instance = null;
         public bool isInteracting;
 
         //bool 관리
@@ -21,7 +21,16 @@ using UnityEngine;
 
         private void Awake()
         {
-            cameraHandler = FindObjectOfType<CameraHandler>();
+             if(instance ==null)
+             {
+                 instance = this;
+              }
+              else if(instance != this)
+             {
+            Destroy(gameObject);
+             }
+        DontDestroyOnLoad(this.gameObject);
+            cameraHandler = FindObjectOfType<CameraHandler>();     
         }
 
         void Start()

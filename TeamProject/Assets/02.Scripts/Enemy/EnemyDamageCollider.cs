@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class EnemyDamageCollider : MonoBehaviour
 {
+    [SerializeField]
     Collider damageCollider;
     [SerializeField]
     private GameObject HitEffect;
     public int currentWeaponDamage = 25;
     public GameObject Enemy;
-    private EnemyAttack enemyAttack;
+    private EnemyAttack enemyAttack; 
+    public GameDataObject gameData;
 
-    ////////////////////////////////////////////////////////////////
     public GameObject player;
-    ////////////////////////////////////////////////////////////////
 
 
     private void Awake()
@@ -24,16 +24,15 @@ public class EnemyDamageCollider : MonoBehaviour
         damageCollider.enabled = false;
         enemyAttack = Enemy.GetComponent<EnemyAttack>();
         HitEffect = Resources.Load<GameObject>("Hits/Hit_02");
-
-        ////////////////////////////////////////////////////////////////
+        StartCoroutine(DamageData());
         player = GameObject.Find("Player");
-        /////////////////////////////////////////////////////////////////
-
     }
-    private void Update()
+    IEnumerator DamageData()
     {
-
+        currentWeaponDamage = gameData.E_Damage;
+        yield return new WaitForSeconds(0.2f);
     }
+
     public void EnableDamageCollider()
     {
         damageCollider.enabled = true;
@@ -53,22 +52,18 @@ public class EnemyDamageCollider : MonoBehaviour
                 _damage.OnDamaged(currentWeaponDamage);
                 Debug.Log(other.name);
                 Debug.Log(-currentWeaponDamage);
+                PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(currentWeaponDamage);
+                }
             }
             else
             {
                 Debug.Log("오류");
             }
         }
-
-        ////////////////////////////////////////////////////////////////
-        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
-
-        if(playerHealth != null)
-        {
-            playerHealth.TakeDamage(currentWeaponDamage);
-
-        }
-        ////////////////////////////////////////////////////////////////
     }
     IEnumerator Hit(Collider other)
     {

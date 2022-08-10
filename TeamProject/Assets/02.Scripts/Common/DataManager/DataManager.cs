@@ -19,7 +19,7 @@ public class DataManager : MonoBehaviour
         GameData data = new GameData();
         data.KillCount = gameData.KillCount;
         data.EnemyHp = gameData.EnemyHp;
-        data.Damage = gameData.Damage;
+        data.E_Damage = gameData.E_Damage;
         data.EnemyLevel = gameData.EnemyLevel;
         bf.Serialize(file, data);
         file.Close();

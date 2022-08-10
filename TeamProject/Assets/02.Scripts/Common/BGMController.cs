@@ -13,10 +13,20 @@ public class BGMController : MonoBehaviour
     [SerializeField]
     public AudioSource BattleSource;
     public int EnemyCount = 0;
+    Transform tr;
+    [SerializeField]
+    Transform Playertr;
     void Start()
     {
+        tr = GetComponent<Transform>();
         BGMCollider = GetComponent<Collider>();
         BGMClips = Resources.LoadAll<AudioClip>("BGM");
+        StartCoroutine(FindPlayer()); 
+    }
+    IEnumerator FindPlayer()
+    {
+        Playertr =GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();
+        yield return new WaitForSeconds(0.2f);     
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +44,7 @@ public class BGMController : MonoBehaviour
     }
     private void Update()
     {
+        tr.position = Playertr.position;
         if (SceneManager.GetActiveScene().name == "Field")
         {
             if (EnemyCount > 0 && BattleSource.isPlaying == false)

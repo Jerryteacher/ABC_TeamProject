@@ -37,10 +37,11 @@ public class GameManager : MonoBehaviour
     public void incKillCount()
     {
         ++gameData.KillCount;
-        if (gameData.KillCount == 70)
+        if (gameData.KillCount == 60)
         {
             if (gameData.EnemyLevel == 5) return;
             ++gameData.EnemyLevel;
+            gameData.E_Damage= Mathf.CeilToInt(gameData.E_Damage * 1.25f);
             while (gameData.KillCount != 0)
             {
                 --gameData.KillCount;

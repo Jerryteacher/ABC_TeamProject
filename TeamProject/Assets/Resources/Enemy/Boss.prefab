@@ -1199,6 +1199,7 @@ MonoBehaviour:
   Hp: 0
   maxHp: 0
   initHp: 100
+  E_Damage: 0
   animator: {fileID: 0}
   gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
   HitClips: []
@@ -1957,6 +1958,7 @@ MonoBehaviour:
   HitEffect: {fileID: 0}
   currentWeaponDamage: 25
   Enemy: {fileID: 2296580755299339779}
+  gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
 --- !u!1 &4438162967624453506
 GameObject:
   m_ObjectHideFlags: 0

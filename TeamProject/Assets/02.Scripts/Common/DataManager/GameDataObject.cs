@@ -8,5 +8,5 @@ public class GameDataObject : ScriptableObject
     public int EnemyLevel = 1;
     public int KillCount = 0;
     public float EnemyHp = 100f;
-    public float Damage = 25f;
+    public int E_Damage = 15;
 }

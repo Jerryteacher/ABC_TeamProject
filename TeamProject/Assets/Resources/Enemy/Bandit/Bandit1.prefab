@@ -27,8 +27,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitEffect: {fileID: 0}
-  currentWeaponDamage: 25
+  currentWeaponDamage: 0
   Enemy: {fileID: 2969872060761616475}
+  gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
 --- !u!1 &2969872056360279701
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +961,7 @@ MonoBehaviour:
   traceDist: 15
   attackDist: 2.5
   isDie: 0
+  bgmcontroller: {fileID: 0}
 --- !u!114 &8829042262887687639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,6 +1005,7 @@ MonoBehaviour:
   Hp: 0
   maxHp: 0
   initHp: 100
+  E_Damage: 0
   animator: {fileID: 2910756267744047507}
   gameData: {fileID: 11400000, guid: 2024d007c1e32aa45b533594c05b4526, type: 2}
   HitClips: []
