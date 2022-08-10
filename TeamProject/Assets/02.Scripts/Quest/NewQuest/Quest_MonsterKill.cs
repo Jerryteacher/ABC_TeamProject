@@ -11,8 +11,8 @@ public class Quest_MonsterKill : Quest
 
     private void Start()
     {
-        base.description = CustomFormat(base.description);
-        base.shortDescription = CustomFormat(base.shortDescription);
+        //base.description = CustomFormat(base.description);
+        //base.shortDescription = CustomFormat(base.shortDescription);
 
         // ex) 5명 처치라면, 0 / 5 로 초기화
         Set_StrQuestProgress();
@@ -24,15 +24,15 @@ public class Quest_MonsterKill : Quest
     }
 
     // 편의를 위해서 퀘스트 설명문에 변수이름을 적음, 그러므로 변수이름을 변수값으로 모두 변경 
-    private string CustomFormat(string str)
-    {
-        str = str.Replace("${PlayerName}", GameManager.instance.playerManager.playerStats.nickname);
-        str = str.Replace("${MonsterName}", this.EnemyName);
-        str = str.Replace("${Count}", this.count.ToString());
-        str = str.Replace("${Reward}", base.reward.ToString());
+    //private string CustomFormat(string str)
+    //{
+    //    str = str.Replace("${PlayerName}", GameManager.instance.playerManager.playerStats.nickname);
+    //    str = str.Replace("${MonsterName}", this.EnemyName);
+    //    str = str.Replace("${Count}", this.count.ToString());
+    //    str = str.Replace("${Reward}", base.reward.ToString());
 
-        return str;
-    }
+    //    return str;
+    //}
 
     public override void AddQuest()
     {

@@ -1099,6 +1099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smith
       objectReference: {fileID: 0}
+    - target: {fileID: 1251546019095464063, guid: 21bca953c9634b144b429c643fc98c85,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 1879605050256200389, guid: 21bca953c9634b144b429c643fc98c85,
         type: 3}
       propertyPath: m_RootOrder
@@ -3645,6 +3650,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ellie
       objectReference: {fileID: 0}
+    - target: {fileID: 6288435752165507100, guid: 1614dc48779d03243accc0970f2042cb,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
     - target: {fileID: 6633470556597476006, guid: 1614dc48779d03243accc0970f2042cb,
         type: 3}
       propertyPath: m_RootOrder
@@ -5329,6 +5339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lina
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032743634837930035, guid: 9487ccace9c51cf428b475e4bc014682,
+        type: 3}
+      propertyPath: m_TagString
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 4032743634837969949, guid: 9487ccace9c51cf428b475e4bc014682,
         type: 3}

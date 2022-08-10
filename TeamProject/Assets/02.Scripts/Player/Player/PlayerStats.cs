@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+    
 public class PlayerStats : MonoBehaviour
 {
     public float healthLevel = 10;
@@ -14,6 +14,17 @@ public class PlayerStats : MonoBehaviour
     public float attack;        // ATK 공격력
     public float defence;       // DEF 방어력
 
+    
+
+    //public int exp
+    //{
+    //    get
+    //    {
+    //        int result = 30 + (Level * 20);
+    //        return result;
+    //    }
+    //}
+    public int currExp = 0;
 
     void Start()
     {

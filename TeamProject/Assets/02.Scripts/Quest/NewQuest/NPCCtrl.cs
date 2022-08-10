@@ -113,19 +113,19 @@ public class NPCCtrl : MonoBehaviour
         
         UI_QuestDescription.GetComponent<QuestDescriptionController>().Text_NPCName.text = this.npcName;
 
-        whenPlayerQuestProgress_Talk = CustomFormat(whenPlayerQuestProgress_Talk);
-        whenPlayerQuestSuccess_Talk = CustomFormat(whenPlayerQuestSuccess_Talk);
-        whenPlayerQuestComplete_Talk = CustomFormat(whenPlayerQuestComplete_Talk);
+        //whenPlayerQuestProgress_Talk = CustomFormat(whenPlayerQuestProgress_Talk);
+        //whenPlayerQuestSuccess_Talk = CustomFormat(whenPlayerQuestSuccess_Talk);
+        //whenPlayerQuestComplete_Talk = CustomFormat(whenPlayerQuestComplete_Talk);
     }
 
     // 편의를 위해서 퀘스트 설명문에 변수이름을 적음, 그러므로 변수이름을 변수값으로 모두 변경 
-    private string CustomFormat(string str)
-    {
-        str = str.Replace("${PlayerName}", GameManager.instance.playerManager.playerStats.nickname);
-        str = str.Replace("${NpcName}", this.npcName);
+    //private string CustomFormat(string str)
+    //{
+    //    str = str.Replace("${PlayerName}", GameManager.instance.playerManager.playerStats.nickname);
+    //    str = str.Replace("${NpcName}", this.npcName);
 
-        return str;
-    }
+    //    return str;
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
