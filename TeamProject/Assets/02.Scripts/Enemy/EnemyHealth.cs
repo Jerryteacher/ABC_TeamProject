@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnemyHealth : MonoBehaviour ,IDamageable
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     private const string WeaponTag = "WEAPON";
+
+
+
     public float Hp = 0f;
     [SerializeField]
     private float maxHp = 0f;
@@ -11,7 +14,7 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     [SerializeField]
     private Animator animator;
     public GameDataObject gameData;
-    Collider  Enemycollider;
+    Collider Enemycollider;
     [SerializeField]
     private AudioClip[] HitClips;
     [SerializeField]
@@ -19,8 +22,12 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     [SerializeField]
     private AudioSource audioSource;
     EnemyAI enemyAI;
-    public float MaxHp 
-    { 
+
+    [Header("[Enemy]")]
+    public int exp;
+    public string enemyname;
+    public float MaxHp
+    {
         get
         {
             return maxHp;
@@ -40,7 +47,7 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
     }
     private void OnEnable()
     {
-        maxHp = Hp = gameData.EnemyLevel*50+150;
+        maxHp = Hp = gameData.EnemyLevel * 50 + 150;
     }
     public void OnDamaged(float dmg)
     {
@@ -51,13 +58,14 @@ public class EnemyHealth : MonoBehaviour ,IDamageable
         if (Hp <= 0)
         {
             enemyAI.state = EnemyAI.State.DIE;
+            PlayerManager.instance.MonsterKillEvent(this);
         }
         else
         {
             animator.SetTrigger("Hit");
             StartCoroutine(Hit());
         }
-        
+
     }
     public void SetHp(float hp) => Hp = Mathf.Clamp(hp, 0, maxHp);
     void SaveGameData()
