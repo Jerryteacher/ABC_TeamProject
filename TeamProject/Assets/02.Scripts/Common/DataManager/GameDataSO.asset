@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GameDataSO
   m_EditorClassIdentifier: 
   EnemyLevel: 1
-  KillCount: 1
+  KillCount: 9
   EnemyHp: 100
   E_Damage: 19

@@ -7,11 +7,17 @@ public class SceneLoadManager : MonoBehaviour
 {
     [SerializeField]
     Collider Portalcollider;
-    GameObject Portal;
+    [SerializeField]
+    GameObject Point;
+    [SerializeField]
+    GameObject Player;
     void Start()
     {
         Portalcollider = GetComponent<Collider>();
-        Portal = GameObject.Find("Portal");
+        Player = GameObject.Find("Player");
+        Point = GameObject.Find("StartPoint");
+        Player.transform.position = Point.transform.position;
+        Player.transform.rotation = Point.transform.rotation;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -20,12 +26,13 @@ public class SceneLoadManager : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "Field")
             {
                 SceneManager.LoadScene("Village");
+                Debug.Log("Village");
             }
             else if (SceneManager.GetActiveScene().name == "Village")
             {
                 SceneManager.LoadScene("Field");
-            }
-           
+                Debug.Log("Field");                     
+            }        
         }
     }
 }
