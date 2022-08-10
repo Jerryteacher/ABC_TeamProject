@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class PlayerAttacker : MonoBehaviour
     {
         AnimatorHandler animatorHandler;
@@ -53,4 +52,4 @@ namespace SG
             lastAttack = "Skill Spin Attack";
         }
     }
-}
+

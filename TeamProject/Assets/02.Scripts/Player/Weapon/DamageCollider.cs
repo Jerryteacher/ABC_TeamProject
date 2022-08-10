@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace SG
-{
+
     public class DamageCollider : MonoBehaviour
     {
         Collider damageCollider;
@@ -67,4 +66,4 @@ namespace SG
             Instantiate(HitEffect, pos, rot);
         }
     }
-}
+

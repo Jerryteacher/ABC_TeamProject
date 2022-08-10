@@ -7,19 +7,56 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] float maxHp;
     [SerializeField] float curHp;
 
+    [SerializeField] private AudioClip[] HitClips;
+    [SerializeField] private AudioClip[] DieClips;
+    [SerializeField] private AudioSource audioSource;
 
-    // Start is called before the first frame update
+    AnimatorHandler animatorHandler;
+
+    void Awake()
+    {
+        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+
+        HitClips = Resources.LoadAll<AudioClip>("HitSound");
+        DieClips = Resources.LoadAll<AudioClip>("DieSound");
+        audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         maxHp = 100;
         SetHp(maxHp);
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
+        //죽음 판정
+        animatorHandler.PlayTargetAnimation("Player_Hit", true);
+
+        if(curHp <= 0)
+        {
+            curHp = 0;
+            animatorHandler.PlayTargetAnimation("Player_Death", true);
+            this.gameObject.tag = "Untagged";
+            this.gameObject.layer = 0;
+            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            
+        }
+
         
+        //죽음판정 끝
+
+
+        //hit, death 사운드
+        if (curHp > 0)
+        {
+            audioSource.PlayOneShot(HitClips[Random.Range(0, HitClips.Length)], 0.5f);
+        }
+        else
+        {
+            audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
+        }
     }
 
     public void OnDamaged(float dmg)

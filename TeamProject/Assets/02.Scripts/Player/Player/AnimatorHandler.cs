@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class AnimatorHandler : MonoBehaviour
     {
         // Animator 관리 스트립트
@@ -124,4 +123,4 @@ namespace SG
                 playerLocomotion.rigidbody.velocity = velocity;
         }
     }
-}
+

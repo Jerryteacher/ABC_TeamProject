@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class InputHandler : MonoBehaviour
     {
         // Input 관리 스크립트
@@ -138,4 +137,4 @@ namespace SG
             }
         }
     }
-}
+

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class Item : ScriptableObject
     {
         [Header("Item Information")]
@@ -12,4 +11,4 @@ namespace SG
 
 
     }
-}
+

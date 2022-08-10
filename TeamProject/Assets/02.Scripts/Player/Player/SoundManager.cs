@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace SG
-{
+
     public class SoundManager : MonoBehaviour
     {
         [SerializeField] private AudioClip[] FootClips;
@@ -50,4 +49,3 @@ namespace SG
             return WeaponClips[UnityEngine.Random.Range(0, WeaponClips.Length)];
         }
     }
-}

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class CameraHandler : MonoBehaviour
     {
         public Transform targetTransform;
@@ -90,4 +89,4 @@ namespace SG
             cameraTransform.localPosition = cameraTransformPosition;
         }
     }
-}
+

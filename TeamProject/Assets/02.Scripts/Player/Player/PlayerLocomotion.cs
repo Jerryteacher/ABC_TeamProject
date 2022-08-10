@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class PlayerLocomotion : MonoBehaviour
     {
         PlayerManager playerManager;
@@ -233,4 +232,4 @@ namespace SG
 
         #endregion
     }
-}
+

@@ -10,6 +10,12 @@ public class EnemyDamageCollider : MonoBehaviour
     public int currentWeaponDamage = 25;
     public GameObject Enemy;
     private EnemyAttack enemyAttack;
+
+    ////////////////////////////////////////////////////////////////
+    public GameObject player;
+    ////////////////////////////////////////////////////////////////
+
+
     private void Awake()
     {
         damageCollider = GetComponent<Collider>();
@@ -18,6 +24,11 @@ public class EnemyDamageCollider : MonoBehaviour
         damageCollider.enabled = false;
         enemyAttack = Enemy.GetComponent<EnemyAttack>();
         HitEffect = Resources.Load<GameObject>("Hits/Hit_02");
+
+        ////////////////////////////////////////////////////////////////
+        player = GameObject.Find("Player");
+        /////////////////////////////////////////////////////////////////
+
     }
     private void Update()
     {
@@ -48,6 +59,16 @@ public class EnemyDamageCollider : MonoBehaviour
                 Debug.Log("오류");
             }
         }
+
+        ////////////////////////////////////////////////////////////////
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+
+        if(playerHealth != null)
+        {
+            playerHealth.TakeDamage(currentWeaponDamage);
+
+        }
+        ////////////////////////////////////////////////////////////////
     }
     IEnumerator Hit(Collider other)
     {

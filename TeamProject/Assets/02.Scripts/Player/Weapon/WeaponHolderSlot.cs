@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class WeaponHolderSlot : MonoBehaviour
     {
         public Transform parentOverride;
@@ -58,4 +57,4 @@ namespace SG
             currentWeaponModel = model;
         }
     }
-}
+

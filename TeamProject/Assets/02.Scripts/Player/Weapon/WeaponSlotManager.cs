@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class WeaponSlotManager : MonoBehaviour
     {
         WeaponHolderSlot leftHandSlot;
@@ -99,4 +98,3 @@ namespace SG
         #endregion
 
     }
-}

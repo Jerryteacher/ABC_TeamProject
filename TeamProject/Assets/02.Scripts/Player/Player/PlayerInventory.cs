@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SG
-{
+
     public class PlayerInventory : MonoBehaviour
     {
         WeaponSlotManager weaponSlotManager;
@@ -24,4 +23,3 @@ namespace SG
 
 
     }
-}
