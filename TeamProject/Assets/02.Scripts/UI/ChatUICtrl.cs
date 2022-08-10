@@ -15,11 +15,11 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
     Image imgNPC;
     Text txtNpcName;
     Text txtDetail;
-    //Button btnNext;
-    //Button btnApply;
-    //Button btnCancel;
+    [SerializeField] Button btnNext;
+    [SerializeField] Button btnApply;
+    [SerializeField] Button btnCancel;
 
-    //public bool NeedRequest;
+    public bool NeedRequest;
 
     InteractionChat chat;
 
@@ -30,9 +30,9 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
         imgNPC = transform.GetChild(0).GetComponent<Image>();
         txtNpcName = transform.GetChild(1).GetChild(0).GetComponent<Text>();
         txtDetail = transform.GetChild(2).GetChild(0).GetComponent<Text>();
-        //btnNext = transform.GetChild(3).GetComponent<Button>();
-        //btnApply = transform.GetChild(3).GetComponent<Button>();
-        //btnCancel = transform.GetChild(4).GetComponent<Button>();
+        btnApply = transform.GetChild(3).GetComponent<Button>();
+        btnCancel = transform.GetChild(4).GetComponent<Button>();
+        btnNext = transform.GetChild(5).GetComponent<Button>();
     }
 
     public void Talk(InteractionChat chat, string name, int id, bool isNpc)
@@ -47,7 +47,7 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
         for (int i = 0; i < 100; i++)
         {
             string _str = TalkManager.getInstance.GetTalk(id + questTalkIndex, i);
-            Debug.Log(_str);
+            //Debug.Log(_str);
             if (_str == null)
                 break;
             detail.Add(_str);
@@ -73,8 +73,8 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
 
 
 
-        //btnApply.gameObject.SetActive(false);
-        //btnCancel.gameObject.SetActive(false);
+        btnApply.gameObject.SetActive(false);
+        btnCancel.gameObject.SetActive(false);
 
         //txtNpcName.text = GetChatNPC(chatID);
         //detail = GetChatMsg(chatID);
@@ -90,8 +90,10 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
 
     public void OnClickNext()
     {
+        if (idx >= detail.Count)
+            OnClickCancel();
         triggerSkip = false;
-        //btnNext.gameObject.SetActive(false);
+        btnNext.gameObject.SetActive(false);
         StartCoroutine(TypingText(detail[idx++]));
     }
 
@@ -108,19 +110,41 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
             txtDetail.text = msg.Substring(0, i);
         }
         triggerSkip = true;
-        //if (idx < detail.Count)
-        //     btnNext.gameObject.SetActive(true);
-        //else
+        //btnNext.gameObject.SetActive(true);
+        if (idx < detail.Count)
+        {
+            btnNext.gameObject.SetActive(true);
+            btnNext.GetComponentInChildren<Text>().text = "다음";
+        }
+        else
+        {
+            if (NeedRequest)
+            {
+                btnApply.gameObject.SetActive(true);
+                btnCancel.gameObject.SetActive(true);
+                //btnCancel.GetComponentInChildren<Text>().text = "거절";
+            }
+            else
+            {
+                btnNext.gameObject.SetActive(true);
+                btnNext.GetComponentInChildren<Text>().text = "닫기";
+            }
+        }
+        //if(idx>= detail.Count)
         //{
-        //    btnNext.gameObject.SetActive(false);
+        //    //btnNext.gameObject.SetActive(false);
         //    if (NeedRequest)
         //    {
         //        btnApply.gameObject.SetActive(true);
         //        btnCancel.GetComponentInChildren<Text>().text = "거절";
         //    }
+        //    else
+        //    {
+
+        //    }
         //    btnCancel.GetComponentInChildren<Text>().text = "닫기";
-        //    btnCancel.gameObject.SetActive(true);
-        // }
+        //    //btnCancel.gameObject.SetActive(true);
+        //}
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -133,11 +157,11 @@ public class ChatUICtrl : MonoBehaviour, IPointerClickHandler
         //Debug.Log("ReqestNext: " + idx);
         if (!triggerSkip)
             triggerSkip = true;
-        else if (idx < detail.Count)
+        else// if (idx < detail.Count)
         {
             OnClickNext();
         }
-        else OnClickApply();
+        //else OnClickCancel();
     }
 
     public void OnClickApply()
