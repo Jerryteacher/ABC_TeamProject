@@ -43,8 +43,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             if (curHp <= 0)
             {
                 StartCoroutine(Die());
-                //Time.timeScale = 0;
-
+                Invoke("Respawn", 5f);
             }
             //hit, death 사운드
             if (curHp > 0)
@@ -64,17 +63,20 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         GetComponent<CapsuleCollider>().enabled = false;
         this.gameObject.tag = "Untagged";
         yield return new WaitForSeconds(5f);
-        GetComponent<CapsuleCollider>().enabled = true;
-        animatorHandler.PlayTargetAnimation("Player_Death", false);
-        this.gameObject.tag = "PALYER";
-        SetHp(maxHp);
         SceneManager.LoadScene("Field");
-        //GetComponent<SearchInteraction>().enabled = false;
-        //GetComponent<EnemyAI>().enabled = false;
-        //GetComponent<MoveAgent>().enabled = false;
-        yield return new WaitForSeconds(5f);
+
+        
     }
- 
+
+    void Respawn()
+    {
+        animatorHandler.PlayTargetAnimation("Player_Death", false);
+        animatorHandler.PlayTargetAnimation("Locomotion", true);
+        GetComponent<CapsuleCollider>().enabled = true;
+        this.gameObject.tag = "PLAYER";
+        SetHp(maxHp);
+    }
+
     public void OnDamaged(float dmg)
     {
         float _hp = curHp;
