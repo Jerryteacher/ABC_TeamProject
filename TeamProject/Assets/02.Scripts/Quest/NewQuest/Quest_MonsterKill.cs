@@ -26,7 +26,7 @@ public class Quest_MonsterKill : Quest
     // 편의를 위해서 퀘스트 설명문에 변수이름을 적음, 그러므로 변수이름을 변수값으로 모두 변경 
     private string CustomFormat(string str)
     {
-        str = str.Replace("${PlayerName}", GameManager.instance.playerManager.playerStats.nickname);
+        //str = str.Replace("${PlayerName}", GameManager.instance.playerManager.playerStats.nickname);
         str = str.Replace("${MonsterName}", this.EnemyName);
         str = str.Replace("${Count}", this.count.ToString());
         str = str.Replace("${Reward}", base.reward.ToString());

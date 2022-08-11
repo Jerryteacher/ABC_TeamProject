@@ -14,11 +14,6 @@ public class PlayerManager : MonoBehaviour
 
     public bool isInteracting;
 
-
-    //Slider expSlider;
-    //public Text levelText;
-
-    public PlayerStats playerStats;
     public GameObject QuestComponentSave;
 
     //bool 관리
@@ -28,12 +23,12 @@ public class PlayerManager : MonoBehaviour
     public bool isGrounded;
     public bool canDoCombo;
 
+
     [HideInInspector] public List<Quest> questList = new List<Quest>();
     public Action<Quest> AddQuestEvent;
     public Action<Quest> RemoveQuestEvent;
     public Action<Quest> CompletequestEvent;
     public Action<EnemyHealth> MonsterKillEvent;
-    public Action<PlayerStats> LevelUpevent;
 
     private void Awake()
     {
@@ -48,15 +43,6 @@ public class PlayerManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         cameraHandler = FindObjectOfType<CameraHandler>();
-
-        playerStats = new PlayerStats();
-
-        playerStats.nickname = "이안";
-        playerStats.currExp = 0;
-        //expSlider.maxValue = playerStats.exp;
-        //expSlider.value = 0;
-
-        playerStats.Level = 1;
     }
 
     void Start()
@@ -101,45 +87,6 @@ public class PlayerManager : MonoBehaviour
             playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
         }
     }
-    #region 경험치 및 레벨업
-    public void GetExp(EnemyHealth enemyHealth)
-    {
-        int virtualExp = playerStats.currExp + enemyHealth.exp;
-
-        while (virtualExp >= playerStats.exp)
-        {
-            virtualExp -= playerStats.exp;
-            LevelUp();
-        }
-        playerStats.currExp = virtualExp;
-        UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
-    }
-    public void GetExp(Quest quest)
-    {
-        int virtualExp = playerStats.currExp + quest.reward;
-
-        while (virtualExp >= playerStats.exp)
-        {
-            virtualExp -= playerStats.exp;
-            LevelUp();
-        }
-        playerStats.currExp = virtualExp;
-        UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
-    }
-    public void LevelUp()
-    {
-        playerStats.Level += 1;
-
-        //levelText.text = "Lv " + playerStats.Level;
-        //expSlider.maxValue = playerStats.exp;
-
-        if (LevelUpevent != null)
-        {
-            LevelUpevent(this.playerStats);
-        }
-    }
-    #endregion
-
     #region 퀘스트 관련
     public void AddQuest(Quest quest)
     {

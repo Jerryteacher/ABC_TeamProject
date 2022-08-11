@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-public class PlayerStats
+public class PlayerStats : MonoBehaviour
 {
-    [Header("플레이어 정보")]
-    public string nickname;
-    public int Level = 1;
-
-
     public float healthLevel = 10;
 
     public float constitution;  // CON 생명력
@@ -19,22 +14,17 @@ public class PlayerStats
     public float maxHealth;     // 최대 HP 체력
     public float attack;        // ATK 공격력
     public float defence;       // DEF 방어력
-    public int exp
+
+    void Start()
     {
-        get
-        {
-            int result = 30 + (Level * 20);
-            return result;
-        }
+        maxHealth = SetMaxHealthFromHealthLevel();
+        curHealth = maxHealth;
     }
-    public int currExp = 0;
-    //maxHealth = SetMaxHealthFromHealthLevel();
-    //curHealth = maxHealth;
-    //private float SetMaxHealthFromHealthLevel()
-    //{
-    //    maxHealth = healthLevel * 10;
-    //    return curHealth;
-    //}
+    private float SetMaxHealthFromHealthLevel()
+    {
+        maxHealth = healthLevel * 10;
+        return curHealth;
+    }
     public void TakeDamage(int damage)
     {
         curHealth = curHealth - damage;
