@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private AudioSource audioSource;
 
     public float nextHit = 2.0f;
-
+    BGMController bgmController;
 
     AnimatorHandler animatorHandler;
     GameObject Point;
@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         HitClips = Resources.LoadAll<AudioClip>("HitSound");
         DieClips = Resources.LoadAll<AudioClip>("DieSound");
         audioSource = GetComponent<AudioSource>();
+        bgmController = GetComponentInChildren<BGMController>();
         Point = GameObject.Find("StartPoint");
     }
 
@@ -43,7 +44,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             if (curHp <= 0)
             {
                 StartCoroutine(Die());
-                Invoke("Respawn", 5f);
             }
             //hit, death 사운드
             if (curHp > 0)
@@ -63,18 +63,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         GetComponent<CapsuleCollider>().enabled = false;
         this.gameObject.tag = "Untagged";
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("Field");
-
-        
-    }
-
-    void Respawn()
-    {
-        animatorHandler.PlayTargetAnimation("Player_Death", false);
-        animatorHandler.PlayTargetAnimation("Locomotion", true);
         GetComponent<CapsuleCollider>().enabled = true;
         this.gameObject.tag = "PLAYER";
+        animatorHandler.PlayTargetAnimation("Player_Death", false);
+        animatorHandler.PlayTargetAnimation("Locomotion", true);
+        bgmController.EnemyCount = 0;
         SetHp(maxHp);
+        SceneManager.LoadScene("Field");
+        //GetComponent<SearchInteraction>().enabled = false;
+        //GetComponent<EnemyAI>().enabled = false;
+        //GetComponent<MoveAgent>().enabled = false;
+        yield return new WaitForSeconds(5f);
     }
 
     public void OnDamaged(float dmg)

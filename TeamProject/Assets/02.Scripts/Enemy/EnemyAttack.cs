@@ -22,8 +22,8 @@ public class EnemyAttack : MonoBehaviour
         enemyDamageCollider = GetComponentInChildren<EnemyDamageCollider>();
         enemyAI = GetComponent<EnemyAI>();
         animator = GetComponent<Animator>();
-        playerTr = GameObject.FindGameObjectWithTag("PLAYER").transform;
         tr = GetComponent<Transform>();
+        StartCoroutine(FindPlayer());
     }
     void Update()
     {
@@ -40,6 +40,11 @@ public class EnemyAttack : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(playerTr.position - tr.position);
             tr.rotation = Quaternion.Slerp(tr.rotation, rot, Time.deltaTime * damping);
         }
+    }
+    IEnumerator FindPlayer()
+    {
+        playerTr = GameObject.FindGameObjectWithTag("PLAYER").transform;
+        yield return new WaitForSeconds(0.1f);
     }
     IEnumerator ColliderSet()
     {

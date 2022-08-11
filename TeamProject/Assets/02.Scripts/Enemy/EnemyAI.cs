@@ -53,8 +53,8 @@ public class EnemyAI : MonoBehaviour
         enemyFov = GetComponent<EnemyFOV>();
         enemyHealth = GetComponent<EnemyHealth>();
         animator = GetComponent<Animator>();
-        bgmcontroller = GameObject.FindGameObjectWithTag("PLAYER").GetComponentInChildren<BGMController>();
         ws = new WaitForSeconds(0.3f);
+        StartCoroutine(FindPlayer());
     }
     private void OnEnable()
     {
@@ -62,6 +62,11 @@ public class EnemyAI : MonoBehaviour
         animator.SetInteger(hashDieIdx, Random.Range(0, 3));
         StartCoroutine(CheckState());
         StartCoroutine(Action());
+    }
+    IEnumerator FindPlayer()
+    {
+        bgmcontroller = GameObject.FindGameObjectWithTag("PLAYER").GetComponentInChildren<BGMController>();
+        yield return new WaitForSeconds(0.1f);
     }
     IEnumerator CheckState()
     {
