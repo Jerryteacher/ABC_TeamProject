@@ -24,8 +24,11 @@ public class GameManager : MonoBehaviour
 
 
         //UI
-        SceneManager.LoadScene("MainUI", LoadSceneMode.Additive);
-        DontDestroyOnLoad(this.gameObject);
+        if(UIManager.getInstance == null)
+        {
+            SceneManager.LoadScene("MainUI", LoadSceneMode.Additive);
+            //DontDestroyOnLoad(this.gameObject);
+        }
     }
     private void Start()
     {
