@@ -19,7 +19,7 @@ using UnityEngine;
         {
             audioSource = GetComponent<AudioSource>();
 
-            playerManager = GetComponent<PlayerManager>();
+            playerManager = GetComponentInParent<PlayerManager>();
             inputHandler = GetComponent<InputHandler>();
         }
 
@@ -27,9 +27,13 @@ using UnityEngine;
 
         private void Step()
         {
+        if (playerManager.isInteracting == false)
+        {
             AudioClip clip = RandomFootClip();
             audioSource.PlayOneShot(clip);
         }
+        else return;
+    }
 
         private AudioClip RandomFootClip()
         {
