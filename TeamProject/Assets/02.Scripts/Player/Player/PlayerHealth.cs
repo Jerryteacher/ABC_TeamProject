@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] float maxHp;
@@ -11,27 +11,19 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private AudioClip[] DieClips;
     [SerializeField] private AudioSource audioSource;
 
-    public GameObject enemy;
+    public float nextHit = 2.0f;
+
 
     AnimatorHandler animatorHandler;
-    EnemyAI enemyAI;
-    MoveAgent moveAgent;
-
-    bool isHurt = false;
-
-
+    GameObject Point;
     void Awake()
     {
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
 
-        enemy = GameObject.FindWithTag("Enemy");
-        enemyAI = GetComponent<EnemyAI>();
-        moveAgent = GetComponent<MoveAgent>();
-
-
         HitClips = Resources.LoadAll<AudioClip>("HitSound");
         DieClips = Resources.LoadAll<AudioClip>("DieSound");
         audioSource = GetComponent<AudioSource>();
+        Point = GameObject.Find("StartPoint");
     }
 
     void Start()
@@ -42,21 +34,18 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage)
     {
-        if (!isHurt)
+        //죽음 판정
+        if (Time.time >= nextHit)
         {
-            isHurt = true;
-            StartCoroutine(HurtTime()); //무적시간 코루틴
-
             //hit, death 판정
             animatorHandler.PlayTargetAnimation("Player_Hit", true);
 
             if (curHp <= 0)
             {
-                Die();
+                StartCoroutine(Die());
                 //Time.timeScale = 0;
 
             }
-
             //hit, death 사운드
             if (curHp > 0)
             {
@@ -67,30 +56,25 @@ public class PlayerHealth : MonoBehaviour, IDamageable
                 audioSource.PlayOneShot(DieClips[Random.Range(0, DieClips.Length)], 0.5f);
             }
         }
-
-        void Die()
-        {
-            curHp = 0;
-            animatorHandler.PlayTargetAnimation("Player_Death", true);
-            this.gameObject.tag = "Untagged";
-            this.gameObject.layer = 0;
-            GetComponent<CapsuleCollider>().enabled = false;
-            GetComponent<Rigidbody>().isKinematic = true;
-            Destroy(gameObject, 2.5f);
-
-            //GetComponent<SearchInteraction>().enabled = false;
-            //GetComponent<EnemyAI>().enabled = false;
-            //GetComponent<MoveAgent>().enabled = false;
-        }
-
-        //무적시간 코루틴
-        IEnumerator HurtTime()
-        {
-            yield return new WaitForSeconds(3f);
-            isHurt = false;
-        }
     }
 
+    IEnumerator Die()
+    {
+        animatorHandler.PlayTargetAnimation("Player_Death", true);
+        GetComponent<CapsuleCollider>().enabled = false;
+        this.gameObject.tag = "Untagged";
+        yield return new WaitForSeconds(5f);
+        GetComponent<CapsuleCollider>().enabled = true;
+        animatorHandler.PlayTargetAnimation("Player_Death", false);
+        this.gameObject.tag = "PALYER";
+        SetHp(maxHp);
+        SceneManager.LoadScene("Field");
+        //GetComponent<SearchInteraction>().enabled = false;
+        //GetComponent<EnemyAI>().enabled = false;
+        //GetComponent<MoveAgent>().enabled = false;
+        yield return new WaitForSeconds(5f);
+    }
+ 
     public void OnDamaged(float dmg)
     {
         float _hp = curHp;
@@ -102,7 +86,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     void SetHp(float hp)
     {
         curHp = Mathf.Clamp(hp, 0, maxHp);
-        if(UIManager.getInstance != null)
+        if (UIManager.getInstance != null)
             UIManager.getInstance.UpdateHealth((int)maxHp, (int)curHp);
     }
+    
 }
