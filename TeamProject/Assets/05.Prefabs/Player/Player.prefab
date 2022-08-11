@@ -134,10 +134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteracting: 0
+  QuestComponentSave: {fileID: 0}
   isSprinting: 0
   isInAir: 0
   isGrounded: 0
   canDoCombo: 0
+  questList: []
 --- !u!114 &281371385560738166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +198,7 @@ MonoBehaviour:
   HitClips: []
   DieClips: []
   audioSource: {fileID: 0}
+  nextHit: 2
 --- !u!82 &1373007555
 AudioSource:
   m_ObjectHideFlags: 0
@@ -427,6 +430,8 @@ MonoBehaviour:
   WeaponClips:
   - {fileID: 8300000, guid: f50d1c2f05a503b43859529f6d6b3cad, type: 3}
   - {fileID: 8300000, guid: 28e48fb8c36bebe4f851afdd51ab5dbe, type: 3}
+  rollClips:
+  - {fileID: 8300000, guid: bddaf15fdc9cf5c439e1c1b76be20dbe, type: 3}
 --- !u!1001 &83556670395761854
 PrefabInstance:
   m_ObjectHideFlags: 0

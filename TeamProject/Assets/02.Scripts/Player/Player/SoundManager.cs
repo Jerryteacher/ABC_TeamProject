@@ -8,6 +8,7 @@ using UnityEngine;
     {
         [SerializeField] private AudioClip[] FootClips;
         [SerializeField] private AudioClip[] WeaponClips;
+        [SerializeField] private AudioClip[] rollClips;
         private AudioSource audioSource;
 
         //싱글턴
@@ -23,24 +24,20 @@ using UnityEngine;
             inputHandler = GetComponent<InputHandler>();
         }
 
-        //////////////////////////////////////////////////////////////////
-
         private void Step()
         {
-        if (playerManager.isInteracting == false)
-        {
-            AudioClip clip = RandomFootClip();
-            audioSource.PlayOneShot(clip);
-        }
-        else return;
-    }
+            if (playerManager.isInteracting == false)
+             {
+                AudioClip clip = RandomFootClip();
+                audioSource.PlayOneShot(clip);
+             }
+            else return;
+         }
 
         private AudioClip RandomFootClip()
         {
             return FootClips[UnityEngine.Random.Range(0, FootClips.Length)];
         }
-
-        ////////////////////////////////////////////////////////////////////////
 
         private void WeaponSwing()
         {
@@ -52,4 +49,18 @@ using UnityEngine;
         {
             return WeaponClips[UnityEngine.Random.Range(0, WeaponClips.Length)];
         }
+
+
+    private void rollAndBack()
+    {
+        AudioClip clip = rollAndBackClip();
+        audioSource.PlayOneShot(clip);
     }
+
+    private AudioClip rollAndBackClip()
+    {
+        return rollClips[UnityEngine.Random.Range(0, rollClips.Length)];
+    }
+
+
+}
