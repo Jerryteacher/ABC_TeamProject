@@ -12,13 +12,29 @@ public class QuestListUiController : MonoBehaviour
     private Text Text_Description;
     private Text Text_Progress;
 
-    List<GameObject> questUIList = new List<GameObject>(); 
+    List<GameObject> questUIList = new List<GameObject>();
+
+    private void Awake()
+    {
+        Panel_Quest = Resources.Load<GameObject>("Prefab/UI/Quest Item");
+    }
 
     private void Start()
     {
         GameManager.instance.playerManager.AddQuestEvent += AddQuestUI;
         GameManager.instance.playerManager.RemoveQuestEvent += RemoveQuestUI;
     }
+
+    public Transform Parent
+    {
+        get
+        {
+            if (parent == null)
+                parent = UIManager.getInstance.QuestListContent;
+            return parent;
+        }
+    }
+
 
     public void AddQuestUI(Quest quest)
     {
@@ -59,7 +75,7 @@ public class QuestListUiController : MonoBehaviour
     // 만들고 반환함
     private GameObject CreateQuestUI(Quest quest)
     {
-        GameObject ui = Instantiate(Panel_Quest, parent);
+        GameObject ui = Instantiate(Panel_Quest, Parent);
         ui.name = quest.number.ToString();
 
         ui = SetQuestUI(ui, quest);

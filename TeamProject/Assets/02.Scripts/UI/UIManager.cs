@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
 
     SearchInteraction playerInter;
     ChatUICtrl chatUI;
+
+    public Transform QuestListContent { get; private set; }
     
 
     //public bool IsChatUIActive { get; protected set; }
@@ -69,6 +71,9 @@ public class UIManager : MonoBehaviour
             txtInterType = interItem.transform.GetChild(2).GetComponent<Text>();
 
             interItem.SetActive(false);
+        }
+        {
+            QuestListContent = GameObject.Find("Quest List").transform.GetChild(0).GetChild(0);
         }
     }
 
