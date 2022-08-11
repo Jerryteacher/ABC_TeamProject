@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
@@ -70,7 +71,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void SetHp(float hp) => Hp = Mathf.Clamp(hp, 0, maxHp);
     void SaveGameData()
     {
-        UnityEditor.EditorUtility.SetDirty(gameData);
+        #if UNITY_EDITOR
+        EditorUtility.SetDirty(gameData);
+#endif
     }
     private void OnApplicationQuit()
     {
