@@ -15,8 +15,7 @@ public class PlayerManager : MonoBehaviour
     public bool isInteracting;
 
 
-
-
+    //Slider expSlider;
     //public Text levelText;
 
     public PlayerStats playerStats;
@@ -52,51 +51,50 @@ public class PlayerManager : MonoBehaviour
 
         playerStats = new PlayerStats();
 
-        //playerStats.nickname = "이안";
+        playerStats.nickname = "이안";
+        playerStats.currExp = 0;
         //expSlider.maxValue = playerStats.exp;
         //expSlider.value = 0;
-        //UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
-        playerStats.currExp = 0;
-        //playerStats.Level = 1;
+
+        playerStats.Level = 1;
     }
 
-        void Start()
-        {
-            inputHandler = GetComponent<InputHandler>();
-            anim = GetComponentInChildren<Animator>();
-            playerLocomotion = GetComponent<PlayerLocomotion>();
-        }
-
-        void Update()
-        {
-            float delta = Time.deltaTime;
-            isInteracting = anim.GetBool("isInteracting");
-            canDoCombo = anim.GetBool("canDoCombo");
-
-            inputHandler.TickInput(delta);
-            playerLocomotion.HandleMovement(delta);
-            playerLocomotion.HandleRollingAndSprinting(delta);
-            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+    void Start()
+    {
+        inputHandler = GetComponent<InputHandler>();
+        anim = GetComponentInChildren<Animator>();
+        playerLocomotion = GetComponent<PlayerLocomotion>();
     }
 
+    void Update()
+    {
+        float delta = Time.deltaTime;
+        isInteracting = anim.GetBool("isInteracting");
+        canDoCombo = anim.GetBool("canDoCombo");
+
+        inputHandler.TickInput(delta);
+        playerLocomotion.HandleMovement(delta);
+        playerLocomotion.HandleRollingAndSprinting(delta);
+        playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+    }
 
     private void FixedUpdate()
-        {
-            float delta = Time.fixedDeltaTime;
+    {
+        float delta = Time.fixedDeltaTime;
 
-            if (cameraHandler != null)
-            {
-                cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
-            }
+        if (cameraHandler != null)
+        {
+            cameraHandler.FollowTarget(delta);
+            cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
         }
+    }
 
-        private void LateUpdate()
-        {
-            inputHandler.rollFlag = false;
-            inputHandler.sprintFlag = false;
-            inputHandler.rb_Input = false;
-            inputHandler.rt_Input = false;
+    private void LateUpdate()
+    {
+        inputHandler.rollFlag = false;
+        inputHandler.sprintFlag = false;
+        inputHandler.rb_Input = false;
+        inputHandler.rt_Input = false;
 
         if (isInAir)
         {
@@ -104,43 +102,42 @@ public class PlayerManager : MonoBehaviour
         }
     }
     #region 경험치 및 레벨업
-    //public void GetExp(EnemyHealth enemyHealth)
-    //{
-    //    int virtualExp = playerStats.currExp + enemyHealth.exp;
+    public void GetExp(EnemyHealth enemyHealth)
+    {
+        int virtualExp = playerStats.currExp + enemyHealth.exp;
 
-    //    while (virtualExp >= playerStats.exp)
-    //    {
-    //        virtualExp -= playerStats.exp;
-    //        LevelUp();
-    //    }
-    //    playerStats.currExp = virtualExp;
-    //    UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
-    //}
-    //public void GetExp(Quest quest)
-    //{
-    //    int virtualExp = playerStats.currExp + quest.reward;
+        while (virtualExp >= playerStats.exp)
+        {
+            virtualExp -= playerStats.exp;
+            LevelUp();
+        }
+        playerStats.currExp = virtualExp;
+        UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
+    }
+    public void GetExp(Quest quest)
+    {
+        int virtualExp = playerStats.currExp + quest.reward;
 
-    //    while (virtualExp >= playerStats.exp)
-    //    {
-    //        virtualExp -= playerStats.exp;
-    //        LevelUp();
-    //    }
-    //    playerStats.currExp = virtualExp;
-    //    UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
-    //}
-    //public void LevelUp()
-    //{
-    //    playerStats.Level += 1;
+        while (virtualExp >= playerStats.exp)
+        {
+            virtualExp -= playerStats.exp;
+            LevelUp();
+        }
+        playerStats.currExp = virtualExp;
+        UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
+    }
+    public void LevelUp()
+    {
+        playerStats.Level += 1;
 
-    //    //levelText.text = "Lv " + playerStats.Level;
-    //    //expSlider.maxValue = playerStats.exp;
-    //    UIManager.getInstance.UpdateExperience(playerStats.exp, playerStats.currExp);
+        //levelText.text = "Lv " + playerStats.Level;
+        //expSlider.maxValue = playerStats.exp;
 
-    //    if (LevelUpevent != null)
-    //    {
-    //        LevelUpevent(this.playerStats);
-    //    }
-    //}
+        if (LevelUpevent != null)
+        {
+            LevelUpevent(this.playerStats);
+        }
+    }
     #endregion
 
     #region 퀘스트 관련
@@ -205,4 +202,3 @@ public class PlayerManager : MonoBehaviour
     }
     #endregion
 }
-
