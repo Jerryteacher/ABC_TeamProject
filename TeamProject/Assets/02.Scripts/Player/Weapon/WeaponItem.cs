@@ -16,4 +16,6 @@ using UnityEngine;
         public string OH_Light_Attack_4;
 
         public string OH_Heavy_Attack_1;
-    }
+
+        public string blocking;
+}

@@ -11,8 +11,7 @@
                     "id": "5e22d02b-726b-4c6d-84e2-1a8d36fde12a",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "Camera",
@@ -20,8 +19,7 @@
                     "id": "f4400b45-0325-4bff-89fe-3a5041557029",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -103,8 +101,7 @@
                     "id": "4d4cd769-575a-4ab6-af3a-067d6ff005e1",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
+                    "interactions": ""
                 },
                 {
                     "name": "RB",
@@ -112,8 +109,7 @@
                     "id": "a6202262-9715-4e07-9f02-2285c241773e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
                 },
                 {
                     "name": "RT",
@@ -121,8 +117,15 @@
                     "id": "e64fafdb-aaa8-4e66-88ca-9c4255eac527",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
+                    "interactions": ""
+                },
+                {
+                    "name": "Block",
+                    "type": "Button",
+                    "id": "2126dc1d-f37a-4d50-b23d-1ab1e8e91af9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -156,6 +159,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1336bc0b-361c-455a-a2eb-2b8d3deea276",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Block",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

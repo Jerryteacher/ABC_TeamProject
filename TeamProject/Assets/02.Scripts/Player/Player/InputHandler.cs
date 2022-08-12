@@ -16,6 +16,9 @@ using UnityEngine;
         public bool rb_Input;
         public bool rt_Input;
 
+        public bool block_Input;
+        public bool blockFlag;
+
         public bool rollFlag;
         public bool sprintFlag;
         public bool comboFlag;
@@ -26,6 +29,10 @@ using UnityEngine;
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
         PlayerManager playerManager;
+        AnimatorHandler animatorHandler;
+    
+    Animator ani;
+    bool isBlock;
 
         // 플레이어 움직임
         Vector2 movementInput;
@@ -38,10 +45,25 @@ using UnityEngine;
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
+        animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
-        
-        public void OnEnable()
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            //isBlock = true;
+            //ani.Play("blocking");
+            animatorHandler.PlayTargetAnimation("blocking", true);
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            animatorHandler.PlayTargetAnimation("Empty", true);
+        }
+    }
+
+
+    public void OnEnable()
         {
             // 오브젝트가 활성화 될 때마다 호출
             if (inputActions == null)
@@ -111,8 +133,10 @@ using UnityEngine;
             inputActions.PlayerAction.RB.performed += i => rb_Input = true;
             inputActions.PlayerAction.RT.performed += i => rt_Input = true;
 
-            //RB input handles the RIGHT hand weapon's light attack
-            if (rb_Input)
+            inputActions.PlayerAction.Block.performed += i => block_Input = true;
+
+        //RB input handles the RIGHT hand weapon's light attack
+        if (rb_Input)
             {
                 if (playerManager.canDoCombo)
                 {
@@ -135,6 +159,7 @@ using UnityEngine;
             {
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             }
+
         }
     }
 
