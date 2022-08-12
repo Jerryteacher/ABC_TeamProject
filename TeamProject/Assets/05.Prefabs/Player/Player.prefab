@@ -92,6 +92,8 @@ MonoBehaviour:
   b_Input: 0
   rb_Input: 0
   rt_Input: 0
+  block_Input: 1
+  blockFlag: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0

@@ -55,10 +55,12 @@ using UnityEngine;
             //isBlock = true;
             //ani.Play("blocking");
             animatorHandler.PlayTargetAnimation("blocking", true);
+            GetComponent<CapsuleCollider>().enabled = false;
         }
         else if (Input.GetMouseButtonUp(1))
         {
             animatorHandler.PlayTargetAnimation("Empty", true);
+            GetComponent<CapsuleCollider>().enabled = true;
         }
     }
 
